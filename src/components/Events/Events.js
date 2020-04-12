@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import "./events.scss"
 import Event from '../Events/Event';
+import EventDetails from './EventDetails';
 
 
 export default function Events(props) {
@@ -13,12 +14,24 @@ export default function Events(props) {
   const listEvent = props.events.map(element => {
     return <Event 
       key = {element.id}
+      id = {element.id}
+      name = {element.name}
+      start_date = {element.start_date}
+      end_date = {element.end_date}
+      location = {element.location}
+      selected={element.name === props.event}
+      setEvent={props.setEvent}
+    />
+  })
+
+  const listEventDetails = props.events.map(element => {
+    return <EventDetails 
+      key = {element.id}
       name = {element.name}
       start_date = {element.start_date}
       end_date = {element.end_date}
       location = {element.location}
       details = {element.details}
-      selected={element.name === props.event}
       setEvent={props.setEvent}
     />
   })
@@ -26,9 +39,7 @@ export default function Events(props) {
   return (
     <div> 
       <h1>HELLLOOO HOME</h1> 
-      <ul>
-        {listEvent}
-      </ul>
+      {props.event ? listEventDetails : listEvent}
     </div>
   )
 }

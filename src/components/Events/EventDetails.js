@@ -12,6 +12,7 @@ export default function EventDetails(props) {
         <p>{props.details}</p>
       </div>
       <button>going</button>
+      <button onClick={() => props.setEvent(null)}>not going</button>
     </div>
   )
 }

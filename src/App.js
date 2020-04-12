@@ -14,6 +14,7 @@ function App() {
 
   const setEvent = event => setState({ ...state, event });
 
+
   useEffect(() => {
     axios.get("/api/events")
     .then((res) => {
@@ -27,7 +28,7 @@ function App() {
   return (
     <div className="App">
       {console.log(state.events)}
-      < Events 
+      <Events 
         events={state.events}
         event={state.event}
         setEvent={setEvent}
