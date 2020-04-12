@@ -20,11 +20,14 @@ export default function Events(props) {
       end_date = {element.end_date}
       location = {element.location}
       selected={element.name === props.event}
+      event={props.event}
       setEvent={props.setEvent}
     />
   })
 
-  const listEventDetails = props.events.map(element => {
+  const result = props.events.filter(element => element.id === props.event);
+
+  const listEventDetails = result.map(element => {
     return <EventDetails 
       key = {element.id}
       name = {element.name}
@@ -39,7 +42,7 @@ export default function Events(props) {
   return (
     <div> 
       <h1>HELLLOOO HOME</h1> 
-      {props.event ? listEventDetails : listEvent}
+      {props.event ?  listEventDetails : listEvent}
     </div>
   )
 }
