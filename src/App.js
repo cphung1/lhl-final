@@ -3,6 +3,7 @@ import './App.css';
 import Events from "./components/Events/Events"
 import axios from 'axios'
 import MyEvents from "./components/MyEvents/MyEvents"
+import Login from "./components/Login/Login"
 import {
   BrowserRouter as Router,
   Switch,
@@ -62,6 +63,7 @@ function App() {
       <div className="App">
         <Link to="/upcoming_events">Upcoming Events</Link>
         <Link to="/my_events">My Events</Link>
+        <Link to="/login" />
       </div>
 
       <Switch>
@@ -77,6 +79,9 @@ function App() {
           <MyEvents 
             myEvents={state.myEvents}
           />
+        </Route>
+        <Route path='/login'>
+          <Login />
         </Route>
       </Switch>
     </Router>
