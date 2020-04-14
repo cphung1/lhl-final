@@ -31,6 +31,7 @@ function App() {
     return axios.post(`/api/user_event`, {data})
     .then((res) => {
       reload()
+      setState(prev => ({...prev, event:null}))
     }).catch(error => console.log(error))
   }
   
