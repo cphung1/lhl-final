@@ -20,8 +20,10 @@ function App() {
     events: [],
     event: null,
     myEvents: [],
+    user: null
   });
 
+  const setUser = user => {setState({user: user})}
   const setEvent = event => setState({ ...state, event });
 
   const clickGoing = (event) => {
@@ -58,12 +60,26 @@ function App() {
     reload()
   }, [])
 
+  const validates = (user) => {
+    return user === null ? (
+        <Login 
+          user={state.user}
+          setUser={setUser}
+        />
+    ) : (
+      <Link to="/"/>
+    )
+  }
+
   return (
     <Router> 
+
+        
       <div className="App">
         <Link to="/upcoming_events">Upcoming Events</Link>
         <Link to="/my_events">My Events</Link>
         <Link to="/login" />
+        {validates(state.user)}
       </div>
 
       <Switch>
@@ -80,9 +96,10 @@ function App() {
             myEvents={state.myEvents}
           />
         </Route>
+
         <Route path='/login'>
-          <Login />
-        </Route>
+            <Login />
+          </Route>
       </Switch>
     </Router>
   );
