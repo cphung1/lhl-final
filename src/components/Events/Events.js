@@ -41,6 +41,11 @@ export default function Events(props) {
     />
   })
 
+  // if user is not logged in render nothing
+  if(!props.user){
+    return null;
+  }
+
   return (
     <div> 
       <h1>HELLLOOO HOME</h1> 
