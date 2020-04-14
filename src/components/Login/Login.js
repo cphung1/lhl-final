@@ -22,11 +22,10 @@ export default function Login(props) {
       email: emailState.email, password: passwordState.password
     };
 
-    console.log("Test", data)
     axios.post('/login', data)
     .then(data => {
-      // console.log(data.data.user.id)
       props.setUser(data.data.user.id)
+      props.fetchMyEvents(data.data.user.id)
     })
   }
 
