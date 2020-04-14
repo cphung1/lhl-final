@@ -11,7 +11,7 @@ export default function EventDetails(props) {
       <div>
         <p>{props.details}</p>
       </div>
-      <button>going</button>
+      <button onClick={() => props.clickGoing({event_id: props.id, user_id: 1})}>going</button>
       <button onClick={() => props.setEvent(null)}>go back</button>
     </div>
   )

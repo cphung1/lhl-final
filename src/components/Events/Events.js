@@ -30,12 +30,14 @@ export default function Events(props) {
   const listEventDetails = result.map(element => {
     return <EventDetails 
       key = {element.id}
+      id = {element.id}
       name = {element.name}
       start_date = {element.start_date}
       end_date = {element.end_date}
       location = {element.location}
       details = {element.details}
       setEvent={props.setEvent}
+      clickGoing={props.clickGoing}
     />
   })
 

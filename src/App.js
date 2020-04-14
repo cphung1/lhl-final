@@ -22,12 +22,19 @@ function App() {
 
   const setEvent = event => setState({ ...state, event });
 
-  const goingEvent = (user_id, event_id) => {
-
+  const clickGoing = (event) => {
+    
+    let data = { 
+      event_id: event.event_id, user_id: event.user_id
+    };
+    //data = JSON.stringify(data)
+    return axios.post(`/api/user_event`, {data}).then((res) => {
+      console.log(res)
+    }).catch(error => console.log(error))
   }
+  
 
   useEffect(() => {
-    
     const getEvent = axios.get("/api/events")
     const getMyEvents = axios.get("/api/user_event/1")
 
@@ -58,6 +65,7 @@ function App() {
             events={state.events}
             event={state.event}
             setEvent={setEvent}
+            clickGoing={clickGoing}
           />
         </Route>
         <Route path="/my_events">
