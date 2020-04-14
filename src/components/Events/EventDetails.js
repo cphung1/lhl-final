@@ -1,5 +1,6 @@
 import React from 'react'
 import "./eventDetails.scss"
+import { Link } from 'react-router-dom'
 
 
 export default function EventDetails(props) {
@@ -11,7 +12,9 @@ export default function EventDetails(props) {
       <div>
         <p>{props.details}</p>
       </div>
-      <button onClick={() => props.clickGoing({event_id: props.id, user_id: 1})}>going</button>
+      <Link to="my_events">
+        <button onClick={() => props.clickGoing({event_id: props.id, user_id: 1})}>going</button>
+      </Link>
       <button onClick={() => props.setEvent(null)}>go back</button>
     </div>
   )

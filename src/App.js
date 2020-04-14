@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Events from "./components/Events/Events"
 import axios from 'axios'
@@ -8,12 +7,14 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect,
+  useHistory
 } from "react-router-dom";
 
 
 function App() {
-  
+  // let history = useHistory();
   const [state, setState] = useState({
     events: [],
     event: null,
@@ -26,12 +27,14 @@ function App() {
     let data = { 
       event_id: event.event_id, user_id: event.user_id
     };
-    return axios.post(`/api/user_event`, {data}).then((res) => {
-      console.log(res)
+
+    return axios.post(`/api/user_event`, {data})
+    .then((res) => {
+      reload()
     }).catch(error => console.log(error))
   }
   
-  useEffect(() => {
+  const reload = function() {
     const getEvent = axios.get("/api/events")
     const getMyEvents = axios.get("/api/user_event/1")
 
@@ -47,6 +50,10 @@ function App() {
     }).catch(() => {
       console.log("error")
     })
+  }
+
+  useEffect(() => {
+    reload()
   }, [])
 
   return (
