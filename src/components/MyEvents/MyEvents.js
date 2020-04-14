@@ -14,9 +14,11 @@ export default function MyEvents(props) {
       start_date = {element.start_date}
       end_date = {element.end_date}
       location = {element.location}
-      // selected={element.name === props.event}
-      // event={props.event}
-      // setEvent={props.setEvent}
+      selected={element.name === props.event}
+      event={props.event}
+      setEvent={props.setEvent}
+      fetchMySwipes={props.fetchMySwipes}
+      email = {props.currentUserEmail}
     />
   })
 

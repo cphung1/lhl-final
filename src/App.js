@@ -5,6 +5,7 @@ import axios from 'axios'
 import MyEvents from "./components/MyEvents/MyEvents"
 import Login from "./components/Login/Login"
 import Home from "./components/Home/Home"
+import Swipe from "./components/Swipe/Swipe"
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,12 +20,14 @@ function App() {
     events: [],
     event: null,
     myEvents: [],
-    user: null
+    user: null,
+    mySwipes: [],
+    currentUserEmail: 'abaynes@gmail.com'
   });
 
   const setUser = user => {setState(prev => ({...prev, user: user}))}
   
-  const setEvent = event => setState({...state, event });
+  const setEvent = event => setState(prev => ({...prev, event: event }));
 
   const clickGoing = (event) => {
     let data = { 
@@ -35,12 +38,31 @@ function App() {
     return axios.post(`/api/user_event`, {data})
     .then((res) => {
       fetchMyEvents(state.user)
-      setState(prev => ({...prev, event:null}))
+      setState(prev => ({...prev, event: null}))
     }).catch(error => 
       console.log(error)
     )
   }
-  
+
+  const filterEmails = (arr, email) => {
+    return arr.filter(element => element.email !== email)
+  }
+
+  const fetchMySwipes = (user_email) => {
+    const getMySwipes = axios.get('/api/users')
+    return Promise.all([
+      Promise.resolve(getMySwipes)
+    ]).then(all => {
+      const filtered = filterEmails(all[0].data, user_email)
+      setState(prev => ({
+        ...prev,
+        mySwipes: filtered,
+      }))
+    }).catch(() => {
+      console.log("cannot fetch my swipes")
+    })
+  }
+
   const fetchMyEvents = function(user_id) {
     const getMyEvents = axios.get(`/api/user_event/${user_id}`)
     Promise.all([
@@ -107,6 +129,8 @@ function App() {
           <MyEvents 
             myEvents={state.myEvents}
             user={state.user}
+            fetchMySwipes={fetchMySwipes}
+            currentUserEmail={state.currentUserEmail}
           />
         </Route>
 
@@ -116,6 +140,12 @@ function App() {
 
         <Route path='/home'>
             <Home />
+        </Route>
+
+        <Route path='/swipe'>
+          <Swipe 
+            mySwipes={state.mySwipes}
+          />
         </Route>
       </Switch>
     </Router>
