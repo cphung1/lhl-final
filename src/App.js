@@ -23,11 +23,9 @@ function App() {
   const setEvent = event => setState({ ...state, event });
 
   const clickGoing = (event) => {
-    
     let data = { 
       event_id: event.event_id, user_id: event.user_id
     };
-    //data = JSON.stringify(data)
     return axios.post(`/api/user_event`, {data}).then((res) => {
       console.log(res)
     }).catch(error => console.log(error))
