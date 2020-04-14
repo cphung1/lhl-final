@@ -13,7 +13,7 @@ export default function EventDetails(props) {
         <p>{props.details}</p>
       </div>
       <Link to="my_events">
-        <button onClick={() => props.clickGoing({event_id: props.id, user_id: 1})}>going</button>
+        <button onClick={() => props.clickGoing({event_id: props.id})}>going</button>
       </Link>
       <button onClick={() => props.setEvent(null)}>go back</button>
     </div>

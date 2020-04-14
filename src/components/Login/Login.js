@@ -25,7 +25,8 @@ export default function Login(props) {
     console.log("Test", data)
     axios.post('/login', data)
     .then(data => {
-      console.log(data)
+      // console.log(data.data.user.id)
+      props.setUser(data.data.user.id)
     })
   }
 
