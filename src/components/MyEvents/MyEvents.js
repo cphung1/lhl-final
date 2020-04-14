@@ -20,6 +20,10 @@ export default function MyEvents(props) {
     />
   })
 
+    // if user is not logged in render nothing
+  if(!props.user){
+    return null;
+  }
 
   return (
     <div> 

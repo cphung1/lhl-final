@@ -36,7 +36,7 @@ export default function Login(props) {
         <label>Email: </label>
         <input type="text" name="email" placeholder="email" value={emailState.email} onChange={handleEmail} />
         <label>Password: </label>
-        <input type="current-password" name="password" placeholder="password" value={passwordState.password} onChange={handlePassword} />
+        <input type="password" name="password" placeholder="password" value={passwordState.password} onChange={handlePassword} />
         <button>Login</button>
       </form>
     </div>

@@ -4,6 +4,7 @@ import Events from "./components/Events/Events"
 import axios from 'axios'
 import MyEvents from "./components/MyEvents/MyEvents"
 import Login from "./components/Login/Login"
+import Home from "./components/Home/Home"
 import {
   BrowserRouter as Router,
   Switch,
@@ -75,7 +76,6 @@ function App() {
   }, [])
 
   const validates = (user) => {
-    console.log("VALIDATE TEST",state.user)
     return user === null ? (
         <Login 
           user={state.user}
@@ -83,15 +83,13 @@ function App() {
           fetchMyEvents={fetchMyEvents}
         />
     ) : (
-      <Link to="/"/>
+      <Redirect to="/home"/>
     )
   }
 
   return (
     <Router> 
       <div className="App">
-        <Link to="/upcoming_events">Upcoming Events</Link>
-        <Link to="/my_events">My Events</Link>
         <Link to="/login" />
         {validates(state.user)}
       </div>
@@ -103,17 +101,23 @@ function App() {
             event={state.event}
             setEvent={setEvent}
             clickGoing={clickGoing}
+            user={state.user}
           />
         </Route>
         <Route path="/my_events">
           <MyEvents 
             myEvents={state.myEvents}
+            user={state.user}
           />
         </Route>
 
         <Route path='/login'>
             <Login />
-          </Route>
+        </Route>
+
+        <Route path='/home'>
+            <Home />
+        </Route>
       </Switch>
     </Router>
   );
