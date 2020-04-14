@@ -19,7 +19,7 @@ function App() {
   const [state, setState] = useState({
     events: [],
     event: null,
-    myEvents: [],
+    myEvents: {},
     user: null
   });
 
@@ -45,8 +45,8 @@ function App() {
   }
   
   const fetchMyEvents = function() {
-    const getMyEvents = axios.get(`/api/user_event/:${state.user}`)
-    console.log("within fetchmyevents", state.user)
+    const getMyEvents = axios.get(`/api/user_event/${state.user_id}`)
+    console.log("within fetchmyevents", state)
     Promise.all([
       Promise.resolve(getMyEvents)
     ]).then(all => {
