@@ -31,7 +31,6 @@ function App() {
     }).catch(error => console.log(error))
   }
   
-
   useEffect(() => {
     const getEvent = axios.get("/api/events")
     const getMyEvents = axios.get("/api/user_event/1")
