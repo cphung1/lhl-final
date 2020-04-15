@@ -1,14 +1,19 @@
 import React from 'react'
+import Card from 'react-bootstrap/Card'
 import "./OneProfile.scss"
 
 export default function Swipe(props) {
 
   return (
     <div className="swipe"> 
-      <img src={`./images/users/${props.id}.jpg`} alt={props.name} />
-      <h1>{props.name}, {props.birthdate}</h1>
-      <h2>{props.location}</h2>
-      <h3>{props.description}</h3>
+    <Card style={{ width: '30rem' }}>
+      <Card.Body>
+      <Card.Img variant="top" src={`./images/users/${props.id}.jpg`} alt={props.name} />
+      <Card.Title>{props.name}, {props.birthdate}</Card.Title>
+      <Card.Title>{props.location}</Card.Title>
+      <Card.Text>{props.description}</Card.Text>
+      </Card.Body>
+    </Card>
     </div>
   )
 }
