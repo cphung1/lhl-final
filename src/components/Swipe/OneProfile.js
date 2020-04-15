@@ -12,6 +12,8 @@ export default function Swipe(props) {
       <Card.Title>{props.name}, {props.birthdate}</Card.Title>
       <Card.Title>{props.location}</Card.Title>
       <Card.Text>{props.description}</Card.Text>
+      <a href="#" class="btn btn-primary">No</a>
+      <a href="#" class="btn btn-primary">Yes</a>
       </Card.Body>
     </Card>
     </div>
