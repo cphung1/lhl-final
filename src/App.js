@@ -179,7 +179,9 @@ function App() {
     ) : (
       <div>
         <Redirect to="/home"/>
-        <NavBar />
+        <footer>
+          <NavBar />
+        </footer>
       </div>
     )
   }
