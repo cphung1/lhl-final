@@ -8,6 +8,7 @@ import Home from "./components/Home/Home"
 import Swipe from "./components/Swipe/Swipe"
 import MyProfile from "./components/MyProfile/MyProfile"
 import Chat from "./components/Chat/Chat"
+import NavBar from "./components/Nav/NavBar"
 
 
 import {
@@ -157,7 +158,10 @@ function App() {
           fetchMyEvents={fetchMyEvents}
         />
     ) : (
-      <Redirect to="/home"/>
+      <div>
+        <Redirect to="/home"/>
+        <NavBar />
+      </div>
     )
   }
 
