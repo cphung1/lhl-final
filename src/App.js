@@ -37,7 +37,14 @@ function App() {
 
     return axios.post(`/api/like`, {data})
     .then((res) => {
-      console.log(res)
+      if (res.data[0]) {
+        axios.post('/api/match', {data})
+        .then(res => {
+          console.log("CREATED MATCH OBJECT!!!!!!",res)
+        })
+      } else {
+        console.log("NO MATCH YET")
+      }
     }).catch(error => 
       console.log("Cannot like")
     )
