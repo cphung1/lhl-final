@@ -29,6 +29,20 @@ function App() {
   
   const setEvent = event => setState(prev => ({...prev, event: event }));
 
+  const getFilterUsers = (user_id, event_id) => {
+    return Promise.all([
+      Promise.resolve(axios.get(`/api/users/${event_id}`, {
+        params: {
+            user_id: user_id
+        }
+    }))
+    ]).then(all => {
+      console.log(all[0].data)
+    }).catch((err) => {
+      console.log("CANT SEND PARAMS BY GETFILTERUSERS")
+    })
+  }
+
   const clickGoing = (event) => {
     let data = { 
       event_id: event.event_id, 
@@ -129,7 +143,9 @@ function App() {
           <MyEvents 
             myEvents={state.myEvents}
             user={state.user}
-            fetchMySwipes={fetchMySwipes}
+            event={state.event}
+            // fetchMySwipes={fetchMySwipes}
+            getFilterUsers={getFilterUsers}
             currentUserEmail={state.currentUserEmail}
           />
         </Route>
