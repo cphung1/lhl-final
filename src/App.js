@@ -6,6 +6,10 @@ import MyEvents from "./components/MyEvents/MyEvents"
 import Login from "./components/Login/Login"
 import Home from "./components/Home/Home"
 import Swipe from "./components/Swipe/Swipe"
+import MyProfile from "./components/MyProfile/MyProfile"
+import Chat from "./components/Chat/Chat"
+
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -191,6 +195,14 @@ function App() {
 
         <Route path='/home'>
             <Home />
+        </Route>
+
+        <Route path='/chat'>
+            <Chat />
+        </Route>
+
+        <Route path='/myprofile'>
+            <MyProfile />
         </Route>
 
         <Route path='/swipe'>
