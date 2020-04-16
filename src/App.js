@@ -29,6 +29,34 @@ function App() {
   
   const setEvent = event => setState(prev => ({...prev, event: event }));
 
+  const likeUser = (liker_id, likee_id) => {
+    let data = { 
+      liker_id: liker_id,
+      likee_id: likee_id
+    };
+
+    return axios.post(`/api/like`, {data})
+    .then((res) => {
+      console.log(res)
+    }).catch(error => 
+      console.log("Cannot like")
+    )
+  }
+
+  const dislikeUser = (disliker_id, dislikee_id) => {
+    let data = { 
+      disliker_id: disliker_id,
+      dislikee_id: dislikee_id
+    };
+
+    return axios.post(`/api/dislike`, {data})
+    .then((res) => {
+      console.log(res)
+    }).catch(error => 
+      console.log("Cannot dislike")
+    )
+  }
+
   const getFilterUsers = (user_id, event_id) => {
     return Promise.all([
       Promise.resolve(axios.get(`/api/users/${event_id}`, {
@@ -161,6 +189,9 @@ function App() {
         <Route path='/swipe'>
           <Swipe 
             mySwipes={state.mySwipes}
+            likeUser={likeUser}
+            dislikeUser={dislikeUser}
+            currentUser={state.user}
           />
         </Route>
       </Switch>

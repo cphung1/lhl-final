@@ -14,6 +14,9 @@ export default function Swipe(props) {
       birthdate = {element.birthdate}
       location = {element.location}
       description = {element.description}
+      likeUser={props.likeUser}
+      dislikeUser={props.dislikeUser}
+      currentUser={props.currentUser}
     />
   })
 
