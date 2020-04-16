@@ -1,8 +1,16 @@
 @import "~bootstrap/scss/bootstrap";
 
 .swipe {
+  top: 0;
+  left: 0;
+  position: absolute;
+
   img {
     height: 300px;
     width: auto;
+  }
+
+  .false{
+    display: none
   }
 }

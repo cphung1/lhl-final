@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Swipe.scss"
 import OneProfile from "./OneProfile"
 
 export default function Swipe(props) {
 
-  console.log(props.mySwipes)
   const listSwipes = props.mySwipes.map(element => {
-    return <OneProfile 
+    return (<OneProfile 
       key = {element.id}
       id = {element.id}
       image = {element.image}
@@ -18,6 +17,7 @@ export default function Swipe(props) {
       dislikeUser={props.dislikeUser}
       currentUser={props.currentUser}
     />
+    )
   })
 
   return (
