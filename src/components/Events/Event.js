@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Event(props) {
   return (
-    <div> 
+    <div className="ListEvents"> 
       <h1>{props.name}</h1>
       <h3>{new Date(props.start_date).toDateString().slice(4)} - {new Date(props.end_date).toDateString().slice(4)}</h3>
       <h4>{props.location}</h4>
