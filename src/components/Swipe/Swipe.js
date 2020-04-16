@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./Swipe.scss"
 import OneProfile from "./OneProfile"
+import axios from 'axios'
 
 export default function Swipe(props) {
 
@@ -21,8 +22,8 @@ export default function Swipe(props) {
   })
 
   return (
-    <div> 
-      <h1>Swiping Function</h1>
+    <div className="swipe"> 
+      <h1>{props.eventName}</h1>
       {listSwipes}
     </div>
   )

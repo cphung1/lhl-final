@@ -1,13 +1,60 @@
 @import "~bootstrap/scss/bootstrap";
 
-.swipe {
-  top: 0;
-  left: 0;
+.oneprofile {
+  top: 5rem;
   position: absolute;
 
+  .card {
+    width: 85vw;
+    height: 65vh;
+    border-radius: 0.7rem;
+    box-shadow: 0px 0px 0px 6px rgba(245, 245, 245, 0.63);
+    border: none;
+  }
+
   img {
-    height: 300px;
+    height: 40vh;
     width: auto;
+    border-radius: 0.25rem;
+    max-width: fit-content;
+  }
+
+  .imgdiv {
+    margin-bottom: 1.5rem;
+  }
+
+  .pofileName {
+    font-size: 2rem;
+  }
+
+  .cardImg {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+
+    button {
+      background: none;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 0px 0px 0px 4px rgba(245, 245, 245, 0.53);
+      height: 90px;
+      width: 90px;
+    }
+
+    .heart {
+      color: #44EAC4;
+    }
+
+    .times{
+      color: #FF4C69;
+    }
   }
 
   .false{

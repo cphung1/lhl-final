@@ -21,6 +21,7 @@ export default function MyEvents(props) {
       user={props.user}
       getFilterUsers={props.getFilterUsers}
       email = {props.currentUserEmail}
+      fetchSingleEvent={props.fetchSingleEvent}
     />
   })
 

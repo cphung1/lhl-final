@@ -14,11 +14,16 @@ import {
   Redirect,
 } from "react-router-dom";
 
+// Font Awesome Stuff
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons'
+library.add( faHeart, faTimes )
 
 function App() {
   const [state, setState] = useState({
     events: [],
     event: null,
+    currentEventName: null,
     myEvents: [],
     user: null,
     mySwipes: [],
@@ -28,6 +33,20 @@ function App() {
   const setUser = user => {setState(prev => ({...prev, user: user}))}
   
   const setEvent = event => setState(prev => ({...prev, event: event }));
+
+  const fetchSingleEvent = function(event_id) {
+    const getSingleEvents = axios.get(`/api/events/${event_id}`)
+    Promise.all([
+      Promise.resolve(getSingleEvents)
+    ]).then(all => {
+      setState(prev => ({
+        ...prev,
+        currentEventName: all[0].data[0].name
+      }))
+    }).catch(() => {
+      console.log("cannot fetch single events")
+    })
+  }
 
   const likeUser = (liker_id, likee_id) => {
     let data = { 
@@ -182,6 +201,7 @@ function App() {
             // fetchMySwipes={fetchMySwipes}
             getFilterUsers={getFilterUsers}
             currentUserEmail={state.currentUserEmail}
+            fetchSingleEvent={fetchSingleEvent}
           />
         </Route>
 
@@ -199,6 +219,7 @@ function App() {
             likeUser={likeUser}
             dislikeUser={dislikeUser}
             currentUser={state.user}
+            eventName={state.currentEventName}
           />
         </Route>
       </Switch>
