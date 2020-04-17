@@ -17,6 +17,10 @@ export default function Swipe(props) {
   }
   const rand = Math.floor(Math.random() * 10000)
 
+  if(!props.user){
+    return null;
+  }
+  
   return (
     <div className="oneprofile" style={{zIndex: rand}}> 
     <Card className={`card ${state.isVisible}`}>

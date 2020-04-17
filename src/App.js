@@ -31,6 +31,7 @@ function App() {
     currentEventName: null,
     myEvents: [],
     user: null,
+    myProfile: [],
     mySwipes: [],
     currentUserEmail: 'abaynes@gmail.com'
   });
@@ -38,6 +39,24 @@ function App() {
   const setUser = user => {setState(prev => ({...prev, user: user}))}
   
   const setEvent = event => setState(prev => ({...prev, event: event }));
+
+  const logout = () => setState(prev => ({...prev, user: null}));
+
+  const getMyProfileDetails = function(current_user) {
+    Promise.all([
+      Promise.resolve(axios.get(`/users/${current_user}`))
+    ]).then(all => {
+      setState(prev => ({
+        ...prev,
+        myProfile: all[0].data[0]
+      }))
+      console.log(state.myProfile)
+      console.log(state.myProfile.name)
+
+    }).catch(() => {
+      console.log("cannot fetch single events")
+    })
+  };
 
   const fetchSingleEvent = function(event_id) {
     const getSingleEvents = axios.get(`/api/events/${event_id}`)
@@ -167,7 +186,7 @@ function App() {
 
   useEffect(() => {
     reload()
-  }, [])
+  }, [state.user])
 
   const validates = (user) => {
     return user === null ? (
@@ -179,7 +198,8 @@ function App() {
     ) : (
       <div>
         <Redirect to="/home"/>
-        <NavBar />
+        <NavBar
+        />
       </div>
     )
   }
@@ -226,7 +246,12 @@ function App() {
         </Route>
 
         <Route path='/myprofile'>
-            <MyProfile />
+            <MyProfile 
+              getMyProfileDetails={getMyProfileDetails}
+              user={state.user} 
+              myProfile={state.myProfile}
+              logout={logout}
+            />
         </Route>
 
         <Route path='/swipe'>
