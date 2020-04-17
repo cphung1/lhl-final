@@ -21,6 +21,10 @@ export default function Swipe(props) {
     )
   })
 
+  if(!props.user){
+    return null;
+  }
+  
   return (
     <div className="swipe"> 
       <h1>{props.eventName}</h1>
