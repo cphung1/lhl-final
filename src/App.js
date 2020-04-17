@@ -11,6 +11,7 @@ import Chat from "./components/Chat/Chat"
 import NavBar from "./components/Nav/NavBar"
 
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,7 +34,8 @@ function App() {
     user: null,
     myProfile: [],
     mySwipes: [],
-    currentUserEmail: 'abaynes@gmail.com'
+    currentUserEmail: 'abaynes@gmail.com',
+    modalShow: false,
   });
 
   const setUser = user => {setState(prev => ({...prev, user: user}))}
@@ -41,6 +43,8 @@ function App() {
   const setEvent = event => setState(prev => ({...prev, event: event }));
 
   const logout = () => setState(prev => ({...prev, user: null}));
+
+  const setModalShow = () => setState(prev => ({...prev, modalShow: false}))
 
   const getMyProfileDetails = function(current_user) {
     Promise.all([
@@ -84,6 +88,7 @@ function App() {
         axios.post('/api/match', {data})
         .then(res => {
           console.log("CREATED MATCH OBJECT!!!!!!",res)
+          setState(prev => ({...prev, modalShow: true}))
         })
       } else {
         console.log("NO MATCH YET")
@@ -243,6 +248,8 @@ function App() {
             dislikeUser={dislikeUser}
             currentUser={state.user}
             eventName={state.currentEventName}
+            modalShow={state.modalShow}
+            setModalShow={setModalShow}
           />
         </Route>
       </Switch>

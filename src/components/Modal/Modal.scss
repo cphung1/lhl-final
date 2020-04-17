@@ -1,0 +1,9 @@
+.modal {
+  z-index: 10000000 !important;
+}
+
+.modal-backdrop {
+  .show {
+    opacity: 0.1 !important;
+  }
+}
