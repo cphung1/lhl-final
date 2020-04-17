@@ -6,7 +6,7 @@
   padding: 20px;
   border-radius: 10px;
   border: solid 2px white;
-  background-color: rgba(248, 174, 248, 0.27);
+  background-color: whitesmoke;
 }
 
 .visible-box {
@@ -26,5 +26,15 @@
 }
 .text-wrapper {
   align-self: center;
-  margin-left: 20px;
+  margin-left: 1.5em;
+  padding: 1em;
+}
+
+#btn-pink {
+  font-size: 32px;
+  color: white;
+  border-color: #fc89bb;
+  background-color: #fc89bb;
+  border-radius: 6px;
+  margin-right: 0.7em;
 }
