@@ -111,11 +111,13 @@ function App() {
     return Promise.all([
       Promise.resolve(axios.get(`/api/users/${event_id}`, {
         params: {
-            user_id: user_id
+          user_id: user_id
         }
     }))
     ]).then(all => {
       setState(prev => ({...prev, mySwipes: all[0].data}))
+      console.log("swipes", state.mySwipes)
+      console.log("data", all[0].data)
     }).catch((err) => {
       console.log("CANT SEND PARAMS BY GETFILTERUSERS")
     })
@@ -135,25 +137,6 @@ function App() {
       console.log(error)
     )
   }
-
-  // const filterEmails = (arr, email) => {
-  //   return arr.filter(element => element.email !== email)
-  // }
-
-  // const fetchMySwipes = (user_email) => {
-  //   const getMySwipes = axios.get('/api/users')
-  //   return Promise.all([
-  //     Promise.resolve(getMySwipes)
-  //   ]).then(all => {
-  //     const filtered = filterEmails(all[0].data, user_email)
-  //     setState(prev => ({
-  //       ...prev,
-  //       mySwipes: filtered,
-  //     }))
-  //   }).catch(() => {
-  //     console.log("cannot fetch my swipes")
-  //   })
-  // }
 
   const fetchMyEvents = function(user_id) {
     const getMyEvents = axios.get(`/api/user_event/${user_id}`)
@@ -226,7 +209,6 @@ function App() {
             myEvents={state.myEvents}
             user={state.user}
             event={state.event}
-            // fetchMySwipes={fetchMySwipes}
             getFilterUsers={getFilterUsers}
             currentUserEmail={state.currentUserEmail}
             fetchSingleEvent={fetchSingleEvent}

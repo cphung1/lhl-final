@@ -27,7 +27,6 @@ export default function NavBar(props) {
           <Link to="/myprofile">
             <FontAwesomeIcon icon={faUserCircle} />   
           </Link>
-          
         </div>
     </div>
   )

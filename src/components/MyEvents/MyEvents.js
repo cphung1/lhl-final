@@ -17,7 +17,6 @@ export default function MyEvents(props) {
       selected={element.name === props.event}
       event={props.event}
       setEvent={props.setEvent}
-      // fetchMySwipes={props.fetchMySwipes}
       user={props.user}
       getFilterUsers={props.getFilterUsers}
       email = {props.currentUserEmail}

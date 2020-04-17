@@ -13,7 +13,6 @@ export default function Event(props) {
         </button>
 
         <Link to="swipe">
-          {/* <button onClick={() => props.fetchMySwipes(props.currentUserEmail)}>Start Swiping</button> */}
           <button onClick={() => {props.getFilterUsers(props.user, props.id); props.fetchSingleEvent(props.id)}}>Start Swiping</button>
         </Link>
 

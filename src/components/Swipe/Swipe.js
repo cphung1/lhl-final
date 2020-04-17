@@ -20,10 +20,6 @@ export default function Swipe(props) {
     />
     )
   })
-
-  if(!props.user){
-    return null;
-  }
   
   return (
     <div className="swipe"> 

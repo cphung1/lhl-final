@@ -16,10 +16,6 @@ export default function Swipe(props) {
     return currentYear - birthdate
   }
   const rand = Math.floor(Math.random() * 10000)
-
-  if(!props.user){
-    return null;
-  }
   
   return (
     <div className="oneprofile" style={{zIndex: rand}}> 
