@@ -1,4 +1,15 @@
-// .ListEvents {
-//   background: grey;
-//   background-image: url("images/events/1.jpg");
-// }
+.ListEvents {
+  margin-bottom: 30px;
+}
+
+.event-container {
+  padding: 20px;
+  border-radius: 10px;
+  border: solid 2px white;
+  background-color: rgba(58, 63, 58, 0.4);
+}
+
+.visible-box {
+  font-weight: bold;
+  color: white;
+}

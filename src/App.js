@@ -186,8 +186,7 @@ function App() {
     ) : (
       <div>
         <Redirect to="/home"/>
-        <NavBar
-        />
+          <NavBar />
       </div>
     )
   }

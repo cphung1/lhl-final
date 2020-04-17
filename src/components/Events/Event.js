@@ -11,11 +11,10 @@ export default function Event(props) {
         <button onClick={() => props.setEvent(props.id)}>
           details
         </button>
-
+        
         <Link to="swipe">
           <button onClick={() => {props.getFilterUsers(props.user, props.id); props.fetchSingleEvent(props.id)}}>Start Swiping</button>
         </Link>
-
     </div>
   )
 }
