@@ -8,7 +8,7 @@ export default function Event(props) {
     <div className="ListEvents"> 
       <div className="event-container">
         <div className="visible-box">
-        <h1>{props.name}</h1>
+        <h2>{props.name}</h2>
         <h3>{new Date(props.start_date).toDateString().slice(4)} - {new Date(props.end_date).toDateString().slice(4)}</h3>
         <h4>{props.location}</h4>
           <button onClick={() => props.setEvent(props.id)}>
