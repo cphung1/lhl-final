@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import { Paper, withStyles, Grid, TextField, Button, FormControlLabel, Checkbox } from '@material-ui/core';
+import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons'
 import "./Login.scss"
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Login(props) {
   const [emailState, setEmail] = useState({
@@ -31,13 +32,20 @@ export default function Login(props) {
 
 
   return (
-    <div> 
+    <div className='login'> 
+      <img src="./images/logo/LogoMakr_62F6RG.png" alt="logo"></img>
       <form onSubmit={handleSubmit}>
-        <label>Email: </label>
-        <input type="text" name="email" placeholder="email" value={emailState.email} onChange={handleEmail} />
-        <label>Password: </label>
-        <input type="password" name="password" placeholder="password" value={passwordState.password} onChange={handlePassword} />
-        <button>Login</button>
+        <div>
+          <label><FontAwesomeIcon icon={faEnvelope}/></label>
+          <input type="text" name="email" placeholder="Email" value={emailState.email} onChange={handleEmail} />
+        </div>
+        <div>
+          <label><FontAwesomeIcon icon={faKey}/></label>
+          <input type="password" name="password" placeholder="Password" value={passwordState.password} onChange={handlePassword} />
+        </div>
+        <div className="loginButton">
+          <button>Login</button>
+        </div>
       </form>
     </div>
   )

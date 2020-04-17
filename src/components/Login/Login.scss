@@ -1,0 +1,43 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  
+  img {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      width: 30%;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+      border: 1px solid lightgrey;
+    }
+
+    svg {
+      color: #fc89bb;
+    }
+
+    .loginButton {
+      display: flex;
+      justify-content: center;
+
+      button {
+        width: 35%;
+        background-color: #fc89bb;
+        border-radius: 0.5rem;
+        color: white;
+        border: none;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+}

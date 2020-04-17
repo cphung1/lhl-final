@@ -22,7 +22,7 @@ import {
 // Font Awesome Stuff
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons'
-library.add( faHeart, faTimes )
+library.add( faHeart, faTimes)
 
 function App() {
   const [state, setState] = useState({
