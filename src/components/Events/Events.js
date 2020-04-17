@@ -47,7 +47,7 @@ export default function Events(props) {
   }
 
   return (
-    <div> 
+    <div className="list-event-wrapper"> 
       <h1>HELLLOOO HOME</h1> 
       {props.event ?  listEventDetails : listEvent}
     </div>
