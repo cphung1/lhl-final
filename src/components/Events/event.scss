@@ -30,7 +30,16 @@
   padding: 1em;
 }
 
-#btn-pink {
+.btn-pink {
+  font-size: 32px;
+  color: white;
+  border-color: #fc89bb;
+  background-color: #fc89bb;
+  border-radius: 6px;
+  margin-right: 0.7em;
+}
+
+.btn-pink-swipe {
   font-size: 32px;
   color: white;
   border-color: #fc89bb;

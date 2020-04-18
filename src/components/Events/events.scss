@@ -11,5 +11,8 @@ h2 {
 .list-event-wrapper {
   padding: 30px;
   margin-bottom: 80px;
-  // background-image: url(/images/events/confetti.jpg);
+
+  button.btn-pink-swipe {
+    display: none;
+  }
 }

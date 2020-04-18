@@ -13,11 +13,11 @@ export default function Event(props) {
             <h2>{props.name}</h2>
             <h3>{new Date(props.start_date).toDateString().slice(4)} - {new Date(props.end_date).toDateString().slice(4)}</h3>
             <h4>{props.location}</h4>
-                <button id="btn-pink" onClick={() => props.setEvent(props.id)}>
+                <button className="btn-pink" onClick={() => props.setEvent(props.id)}>
                   Details
                 </button>
                 <Link to="swipe">
-                  <button id="btn-pink" onClick={() => {props.getFilterUsers(props.user, props.id); props.fetchSingleEvent(props.id)}}>Start Swiping</button>
+                  <button className="btn-pink-swipe" onClick={() => {props.getFilterUsers(props.user, props.id); props.fetchSingleEvent(props.id)}}>Start Swiping</button>
                 </Link>
           </div>
         </div>
