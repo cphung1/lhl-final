@@ -1,0 +1,48 @@
+.details {
+  // border: solid black;
+  // border-radius: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+}
+
+.detail-content {
+  background-color: blue;
+  // text-align: center;
+}
+
+.details-article {
+  text-align: center;
+}
+.detail-avatar {
+  width: 300px;
+}
+.card-wrapper {
+  width: 585px;
+}
+.body-font {
+  font-size: 25px;
+}
+
+#card {
+  border: solid 3px #c2c2c2;
+  border-radius: 10px;
+}
+
+.btn-pink-details {
+  padding: 5px 45px;
+  font-size: 40px;
+  color: white;
+  border-color: #fc89bb;
+  background-color: #fc89bb;
+  border-radius: 15px;
+  margin-right: 0.7em;
+}
+.btn-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.detail-title {
+  text-align: center;
+}

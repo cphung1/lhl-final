@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import "./events.scss"
 import Event from '../Events/Event';
 import EventDetails from './EventDetails';
+import classNames from "classnames";
 
 
 export default function Events(props) {
@@ -28,7 +29,7 @@ export default function Events(props) {
   const result = props.events.filter(element => element.id === props.event);
 
   const listEventDetails = result.map(element => {
-    return <EventDetails 
+    return <EventDetails
       key = {element.id}
       id = {element.id}
       name = {element.name}
@@ -47,11 +48,9 @@ export default function Events(props) {
   }
 
   return (
-    <div className="list-event-wrapper"> 
-      <h1>List of Events</h1> 
-      <div className="hidden">
-        {props.event ?  listEventDetails : listEvent}
-      </div>
+    <div className="list-event-wrapper">
+          <h1>List of Events</h1>
+          {props.event ?  listEventDetails : listEvent}  
     </div>
   )
 }
