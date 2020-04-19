@@ -55,7 +55,7 @@ export default function Messages(props) {
       {listMessages}
       <form onSubmit={handleSubmit}>
         <input type="text" name="msg" placeholder="Submit message..." value={msgState.msg} onChange={handleMsg} />
-        <button>Submit</button>
+        <button>Send</button>
       </form>
     </div>
   )

@@ -1,0 +1,25 @@
+.messages {
+  form {
+    position: fixed;
+    bottom: 100px;
+    font-size: 2rem;
+    padding: 2rem;
+    width: 100%;
+
+    input {
+      width: 80vw;
+      border: 1px solid lightgrey;
+      padding: 1rem;
+      border-radius: 2rem;
+    }
+
+    button {
+      background-color: #fc89bb;
+      border-radius: 2rem;
+      color: white;
+      border: none;
+      padding: 1rem;
+      margin-left: 1.5rem;
+    }
+  }
+}
