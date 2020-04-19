@@ -14,6 +14,7 @@ export default function Login(props) {
   });
 
   const handleEmail = event => (setEmail({[event.target.name]: event.target.value}))
+  
   const handlePassword = event => (setPassword({[event.target.name]: event.target.value}))
 
   const handleSubmit = event => {

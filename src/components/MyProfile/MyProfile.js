@@ -9,9 +9,9 @@ export default function MyProfile(props) {
     return currentYear - birthdate
   }
 
-  useEffect(() => {
-    props.getMyProfileDetails(props.user)
-  }, [])
+  // useEffect(() => {
+  //   props.getMyProfileDetails(props.user)
+  // }, [])
 
   if(!props.user){
     return null;

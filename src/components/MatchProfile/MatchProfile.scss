@@ -1,0 +1,44 @@
+.matchprofile {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: rgba(242, 242, 242, 0.45);
+  box-shadow: 0 0 0 2px rgba(222, 222, 222, 0.34);
+  margin-top: 2rem;
+  justify-content: space-between;
+
+  .matchdetails {
+    display: flex;
+    flex-direction: row;    
+    .matchimg {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+    }
+  
+    .matchuser {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 2rem;
+    }
+  }
+
+  .matchmsg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    button {
+      background-color: #fc89bb;
+      border-radius: 0.5rem;
+      color: white;
+      border: none;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+    }
+  }
+}

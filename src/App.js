@@ -9,6 +9,7 @@ import Swipe from "./components/Swipe/Swipe"
 import MyProfile from "./components/MyProfile/MyProfile"
 import Chat from "./components/Chat/Chat"
 import NavBar from "./components/Nav/NavBar"
+import Messages from './components/Chat/Messages'
 
 
 
@@ -34,9 +35,15 @@ function App() {
     user: null,
     myProfile: [],
     mySwipes: [],
+    myMatches: [],
+    currentConvo: null,
+    myMessages: [],
+    myMatchMsgUser: null,
     currentUserEmail: 'abaynes@gmail.com',
     modalShow: false,
   });
+
+  const setMyMatchMsgUser = match_id => {setState(prev => ({...prev, myMatchMsgUser: match_id}))}
 
   const setUser = user => {setState(prev => ({...prev, user: user}))}
   
@@ -44,7 +51,55 @@ function App() {
 
   const logout = () => setState(prev => ({...prev, user: null}));
 
+  const setCurrentConvo = () => {setState(prev => ({...prev, currentConvo: null})); console.log(state.currentConvo)}
+
   const setModalShow = () => setState(prev => ({...prev, modalShow: false}))
+
+  const getMyMessages = function(convo_id) {
+    Promise.all([
+      Promise.resolve(axios.get(`api/messages/${convo_id}`))
+    ]).then(all => {
+      setState(prev => ({
+        ...prev,
+        myMessages: all[0].data
+      }))
+    }).catch(() => {
+      console.log("cannot fetch my conversations")
+    })
+  }
+
+  const getMyConversations = function(current_user, match_user) {
+    Promise.all([
+      Promise.resolve(axios.get(`api/conversations/${current_user}`, {
+        params: {
+          match_id: match_user
+        }
+    }))
+    ]).then(all => {
+      setState(prev => ({
+        ...prev,
+        currentConvo: all[0].data[0].id
+      }))
+      // console.log('id', all[0].data[0].id)
+      // console.log('staet', state.currentConvo)
+    }).catch(() => {
+      console.log("cannot fetch my conversations")
+    })
+  };
+
+  const getMyMatches = function(current_user, convo_id) {
+    Promise.all([
+      Promise.resolve(axios.get(`api/match/${current_user}`))
+    ]).then(all => {
+      setState(prev => ({
+        ...prev,
+        myMatches: all[0].data
+      }))
+    })
+    .catch(() => {
+      console.log("cannot fetch my matches")
+    })
+  };
 
   const getMyProfileDetails = function(current_user) {
     Promise.all([
@@ -54,9 +109,6 @@ function App() {
         ...prev,
         myProfile: all[0].data[0]
       }))
-      console.log(state.myProfile)
-      console.log(state.myProfile.name)
-
     }).catch(() => {
       console.log("cannot fetch single events")
     })
@@ -174,7 +226,8 @@ function App() {
 
   useEffect(() => {
     reload()
-  }, [state.user])
+    getMyProfileDetails(state.user)
+  }, [])
 
   const validates = (user) => {
     return user === null ? (
@@ -185,8 +238,10 @@ function App() {
         />
     ) : (
       <div>
+        {/* {getMyProfileDetails(state.user)} */}
         <Redirect to="/home"/>
         <NavBar
+        setCurrentConvo={setCurrentConvo}
         />
       </div>
     )
@@ -229,7 +284,14 @@ function App() {
         </Route>
 
         <Route path='/chat'>
-            <Chat />
+            <Chat 
+              getMyMatches={getMyMatches}
+              user={state.user}
+              myMatches={state.myMatches}
+              getMyConversations={getMyConversations}
+              myConversations={state.myConversations}
+              setMyMatchMsgUser={setMyMatchMsgUser}
+            />
         </Route>
 
         <Route path='/myprofile'>
@@ -250,6 +312,17 @@ function App() {
             eventName={state.currentEventName}
             modalShow={state.modalShow}
             setModalShow={setModalShow}
+          />
+        </Route>
+
+        <Route path='/messages'>
+          <Messages 
+            currentConvo={state.currentConvo}
+            getMyMessages={getMyMessages}
+            myMessages={state.myMessages}
+            myProfile={state.myProfile}
+            user={state.user}
+            myMatchMsgUser={state.myMatchMsgUser}
           />
         </Route>
       </Switch>
