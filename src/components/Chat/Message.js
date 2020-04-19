@@ -10,7 +10,7 @@ export default function Message(props) {
 
   return (
     <div className={msgClass}> 
-      <h5>{props.user_id}</h5>
+      {/* <h5>{props.user_id}</h5> */}
       <p>{props.body}</p>
     </div>
   )

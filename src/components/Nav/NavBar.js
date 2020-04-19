@@ -16,7 +16,7 @@ export default function NavBar(props) {
   return(
     <div className="NavBar">
         <div className="icons">
-          <Link to="chat" onClick={() => props.setCurrentConvo()}>
+          <Link to="chat" onClick={() => {props.setCurrentConvo(); props.setMyMessages()}}>
             <FontAwesomeIcon icon={faCommentAlt} />
           </Link>
           

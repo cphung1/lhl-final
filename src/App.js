@@ -51,7 +51,10 @@ function App() {
 
   const logout = () => setState(prev => ({...prev, user: null}));
 
-  const setCurrentConvo = () => {setState(prev => ({...prev, currentConvo: null})); console.log(state.currentConvo)}
+  // const setCurrentConvo = () => {setState(prev => ({...prev, currentConvo: null})); }
+  const setCurrentConvo = () => {console.log(state.currentConvo)}
+
+  const setMyMessages = () => {setState(prev => ({...prev, myMessages: []}))}
 
   const setModalShow = () => setState(prev => ({...prev, modalShow: false}))
 
@@ -80,8 +83,8 @@ function App() {
         ...prev,
         currentConvo: all[0].data[0].id
       }))
-      // console.log('id', all[0].data[0].id)
-      // console.log('staet', state.currentConvo)
+      getMyMessages(all[0].data[0].id)
+      // console.log('id', all[0].data[0].id
     }).catch(() => {
       console.log("cannot fetch my conversations")
     })
@@ -242,6 +245,7 @@ function App() {
         <Redirect to="/home"/>
         <NavBar
         setCurrentConvo={setCurrentConvo}
+        setMyMessages={setMyMessages}
         />
       </div>
     )
@@ -291,6 +295,8 @@ function App() {
               getMyConversations={getMyConversations}
               myConversations={state.myConversations}
               setMyMatchMsgUser={setMyMatchMsgUser}
+              getMyMessages={getMyMessages}
+              currentConvo={state.currentConvo}
             />
         </Route>
 
@@ -323,6 +329,8 @@ function App() {
             myProfile={state.myProfile}
             user={state.user}
             myMatchMsgUser={state.myMatchMsgUser}
+            setCurrentConvo={setCurrentConvo}
+            setMyMessages={setMyMessages}
           />
         </Route>
       </Switch>
