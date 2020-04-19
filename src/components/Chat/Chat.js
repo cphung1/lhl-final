@@ -16,7 +16,10 @@ export default function Chat(props) {
     />
   })
 
-
+  const handleReceived = (message) => {
+    console.log("CHANNEL MSG", message)
+    props.getMyMatches(props.user)
+  }
 
   useEffect(() => {
     props.getMyMatches(props.user)
@@ -27,10 +30,10 @@ export default function Chat(props) {
       <h1>Messages</h1>
       {listMatches}
 
-      {/* <ActionCableConsumer 
-        channel={{channel: 'MessagesChannel'}}
-        onRecevied={handleReceivedConversation}
-      /> */}
+      <ActionCableConsumer
+        channel="ConversationsChannel"
+        onReceived={handleReceived}
+      />
     </div>
   )
 }

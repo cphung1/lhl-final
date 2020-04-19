@@ -90,7 +90,7 @@ function App() {
     })
   };
 
-  const getMyMatches = function(current_user, convo_id) {
+  const getMyMatches = function(current_user) {
     Promise.all([
       Promise.resolve(axios.get(`api/match/${current_user}`))
     ]).then(all => {
@@ -299,6 +299,8 @@ function App() {
               getMyConversations={getMyConversations}
               myConversations={state.myConversations}
               setMyMatchMsgUser={setMyMatchMsgUser}
+              user={state.user}
+              getMyMatches={getMyMatches}
             />
         </Route>
 
