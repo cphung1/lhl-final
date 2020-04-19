@@ -226,7 +226,6 @@ function App() {
 
   useEffect(() => {
     reload()
-    getMyProfileDetails(state.user)
   }, [])
 
   const validates = (user) => {
@@ -235,6 +234,7 @@ function App() {
           user={state.user}
           setUser={setUser}
           fetchMyEvents={fetchMyEvents}
+          getMyProfileDetails={getMyProfileDetails}
         />
     ) : (
       <div>

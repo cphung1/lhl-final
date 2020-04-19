@@ -41,6 +41,7 @@ export default function Messages(props) {
     axios.post('/api/messages', data)
     .then(res => {
       console.log(res)
+      props.getMyMessages(props.currentConvo)
     })
   }
 
