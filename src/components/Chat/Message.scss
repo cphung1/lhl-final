@@ -2,18 +2,26 @@
   display: flex;
   justify-content: flex-end;
   margin-right: 2rem;
+  p {
+    background: #fc89bb;
+    color: white;
+    border-radius: 2.5rem 2.5rem 0 2.5rem;
+  }
 }
 
 .msg--left {
   justify-content: flex-start;
   margin-left: 2rem;
+  p {
+    background: #ababab;
+    color: white;
+    border-radius: 2.5rem 2.5rem 2.5rem 0;
+  }
 }
 
 .message {
   p {
-    border: 1px solid lightgrey;
-    padding: 1rem;
-    border-radius: 2.5rem;
+    padding: 1rem 1.7rem 1rem 1.7rem;
     font-size: 2rem;
   }
 }

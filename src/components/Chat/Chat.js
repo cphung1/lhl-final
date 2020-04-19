@@ -12,8 +12,6 @@ export default function Chat(props) {
       currentUser={props.user}
       getMyConversations={props.getMyConversations}
       setMyMatchMsgUser={props.setMyMatchMsgUser}
-      getMyMessages={props.getMyMessages}
-      currentConvo={props.currentConvo}
     />
   })
 

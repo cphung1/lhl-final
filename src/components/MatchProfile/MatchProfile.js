@@ -17,11 +17,7 @@ export default function MatchProfile(props) {
       <Link to='messages'>
         <button onClick={() => {
           props.getMyConversations(props.currentUser, props.id); 
-          console.log("ID OF MATCH", props.id)
           props.setMyMatchMsgUser(props.name); 
-          console.log("NAME OF MATCH", props.name)
-          // props.getMyMessages(props.currentConvo) 
-          // console.log("ID OF CONVO", props.currentConvo)
           }}>
           Message
         </button>

@@ -44,12 +44,9 @@ export default function Messages(props) {
     axios.post('/api/messages', data)
     .then(res => {
       console.log(res)
+      setMsg({msg: ''})
     })
   }
-
-  // useEffect(() => {
-  //   props.getMyMessages(props.currentConvo)
-  // }, [])
 
   return (
     <div className="messages"> 
@@ -59,7 +56,7 @@ export default function Messages(props) {
       <h1>{props.myMatchMsgUser}</h1>
       {listMessages}
       <form onSubmit={handleSubmit}>
-        <input type="text" name="msg" placeholder="Submit message..." value={msgState.msg} onChange={handleMsg} />
+        <input type="text" name="msg" placeholder="Send message..." value={msgState.msg} onChange={handleMsg} />
         <button>Send</button>
       </form>
     </div>

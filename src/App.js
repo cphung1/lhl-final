@@ -295,8 +295,6 @@ function App() {
               getMyConversations={getMyConversations}
               myConversations={state.myConversations}
               setMyMatchMsgUser={setMyMatchMsgUser}
-              getMyMessages={getMyMessages}
-              currentConvo={state.currentConvo}
             />
         </Route>
 
@@ -324,7 +322,6 @@ function App() {
         <Route path='/messages'>
           <Messages 
             currentConvo={state.currentConvo}
-            getMyMessages={getMyMessages}
             myMessages={state.myMessages}
             myProfile={state.myProfile}
             user={state.user}
