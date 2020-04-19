@@ -5,10 +5,15 @@ import { Link } from "react-router-dom";
 export default function Home(props) {
   return (
     <div> 
-      <footer>
-      <Link to="/upcoming_events">Upcoming Events</Link>
-      <Link to="/my_events">My Events</Link>
-      </footer>
+      <img src="/images/logo/LogoMakr_62F6RG.png"></img>
+      <div id="event-wrapper">
+        <div className="event-wrapper">
+          <Link to="/upcoming_events">Upcoming Events</Link>
+        </div>
+        <div className="event-wrapper">
+          <Link to="/my_events">My Events</Link>
+        </div>
+      </div>
     </div>
   )
 }

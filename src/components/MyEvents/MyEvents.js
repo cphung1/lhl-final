@@ -30,7 +30,7 @@ export default function MyEvents(props) {
   }
 
   return (
-    <div> 
+    <div className="my-event-wrapper"> 
       <h1>My Events</h1>
       {listEvent}
     </div>

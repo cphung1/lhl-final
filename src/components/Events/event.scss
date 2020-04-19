@@ -1,4 +1,49 @@
-// .ListEvents {
-//   background: grey;
-//   background-image: url("images/events/1.jpg");
-// }
+.ListEvents {
+  margin-bottom: 30px;
+}
+
+.event-container {
+  padding: 20px;
+  border-radius: 10px;
+  border: solid 2px #ffbfdb;
+  background-color: whitesmoke;
+}
+
+.visible-box {
+  font-weight: bold;
+  color: white;
+}
+
+.avatar {
+  width: auto;
+  height: 235px;
+}
+
+.content-wrapper {
+  align-self: center;
+  margin-left: 20px;
+  display: inline-flex;
+}
+.text-wrapper {
+  align-self: center;
+  margin-left: 1.5em;
+  padding: 1em;
+}
+
+.btn-pink {
+  font-size: 32px;
+  color: white;
+  border-color: #fc89bb;
+  background-color: #fc89bb;
+  border-radius: 6px;
+  margin-right: 0.7em;
+}
+
+.btn-pink-swipe {
+  font-size: 32px;
+  color: white;
+  border-color: #fc89bb;
+  background-color: #fc89bb;
+  border-radius: 6px;
+  margin-right: 0.7em;
+}
