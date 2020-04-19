@@ -6,13 +6,13 @@ import * as serviceWorker from './serviceWorker';
 import { ActionCableProvider } from 'react-actioncable-provider';
 
 ReactDOM.render(
-    // <ActionCableProvider url='ws://localhost:3000/cable'>
-    //   <App />
-    // </ActionCableProvider>,
-  <React.StrictMode>
-    <App />
+    <ActionCableProvider url='ws://localhost:3000/cable'>
+      <App />
+    </ActionCableProvider>,
+  // <React.StrictMode>
+  //   <App />
 
-  </React.StrictMode>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

@@ -328,6 +328,7 @@ function App() {
             myMatchMsgUser={state.myMatchMsgUser}
             setCurrentConvo={setCurrentConvo}
             setMyMessages={setMyMessages}
+            getMyMessages={getMyMessages}
           />
         </Route>
       </Switch>

@@ -25,6 +25,10 @@ export default function Messages(props) {
     )
   })
 
+  const handleReceived = (message) => {
+    props.getMyMessages(message.conversation_id)
+  }
+
   const [msgState, setMsg] = useState({
     msg: '',
   });
@@ -55,6 +59,11 @@ export default function Messages(props) {
       </Link>
       <h1>{props.myMatchMsgUser}</h1>
       {listMessages}
+      <ActionCableConsumer
+        channel="MessagesChannel"
+        onReceived={handleReceived}
+      />
+
       <form onSubmit={handleSubmit}>
         <input type="text" name="msg" placeholder="Send message..." value={msgState.msg} onChange={handleMsg} />
         <button>Send</button>

@@ -23,7 +23,7 @@ export default function Chat(props) {
 
   return (
     <div className="chat"> 
-      <h1>My Messages</h1>
+      <h1>Messages</h1>
       {listMatches}
 
       {/* <ActionCableConsumer 
