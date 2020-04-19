@@ -4,20 +4,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faCommentAlt } from '@fortawesome/free-solid-svg-icons'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
+import classnames from "classnames";
 
 export default function NavBar(props) {
+  const badgeClass = classnames("badge", {
+    'badge--on' : props.msgNotification
+  })
   return(
     <div className="NavBar">
         <div className="icons">
-          <Link to="chat" onClick={() => {props.setCurrentConvo(); props.setMyMessages()}}>
+          <Link to="chat" onClick={() => {props.setCurrentConvo(); props.setMyMessages(); props.setMsgNotification(false)}}>
             <FontAwesomeIcon icon={faCommentAlt} />
+            <span className={badgeClass}>.</span>
           </Link>
           
           <Link to="/home">

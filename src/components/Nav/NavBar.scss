@@ -10,9 +10,38 @@
     padding: 10px;
     display: flex;
     justify-content: space-around;
+    position: relative;
 
     svg {
       color: #fc89bb;
+    }
+
+    .badge {
+      // position: absolute;
+      // top: 8px;
+      // left: 146px;
+      // font-size: 1px;
+      // border: 8px solid red;
+      // border-radius: 50%;
+      // padding: 0;
+      // height: 25px;
+      // background: red;
+      // width: 25px;
+      visibility: hidden;
+    }
+
+    .badge--on {
+      visibility: visible;
+      position: absolute;
+      top: 8px;
+      left: 146px;
+      font-size: 1px;
+      border: 8px solid red;
+      border-radius: 50%;
+      padding: 0;
+      height: 25px;
+      background: red;
+      width: 25px;
     }
   }
 }

@@ -28,6 +28,7 @@ export default function Messages(props) {
 
   const handleReceived = (message) => {
     props.getMyMessages(message.conversation_id)
+    props.setMsgNotification(true)
   }
 
   const [msgState, setMsg] = useState({
@@ -65,10 +66,10 @@ export default function Messages(props) {
       <div className="msgsContent">
         {listMessages}
       </div>
-      <ActionCableConsumer
+      {/* <ActionCableConsumer
         channel="MessagesChannel"
         onReceived={handleReceived}
-      />
+      /> */}
 
       <form onSubmit={handleSubmit}>
         <input type="text" name="msg" placeholder="Send message..." value={msgState.msg} onChange={handleMsg} />

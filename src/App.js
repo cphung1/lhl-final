@@ -10,6 +10,7 @@ import MyProfile from "./components/MyProfile/MyProfile"
 import Chat from "./components/Chat/Chat"
 import NavBar from "./components/Nav/NavBar"
 import Messages from './components/Chat/Messages'
+import { ActionCableConsumer } from 'react-actioncable-provider';
 
 
 
@@ -41,7 +42,10 @@ function App() {
     myMatchMsgUser: null,
     currentUserEmail: 'abaynes@gmail.com',
     modalShow: false,
+    msgNotification: false,
   });
+
+  const setMsgNotification = (status) => setState(prev => ({...prev, msgNotification: status}))
 
   const setMyMatchMsgUser = match_id => {setState(prev => ({...prev, myMatchMsgUser: match_id}))}
 
@@ -235,6 +239,14 @@ function App() {
     reload()
   }, [])
 
+  const handleReceivedMsg = (message) => {
+    getMyMessages(message.conversation_id)
+    console.log(message)
+    if(message.user_id !== state.user) {
+      setMsgNotification(true)
+    }
+  }
+
   const validates = (user) => {
     return user === null ? (
         <Login 
@@ -248,9 +260,15 @@ function App() {
         {/* {getMyProfileDetails(state.user)} */}
         <Redirect to="/home"/>
         <NavBar
-        setCurrentConvo={setCurrentConvo}
-        setMyMessages={setMyMessages}
+          setCurrentConvo={setCurrentConvo}
+          setMyMessages={setMyMessages}
+          msgNotification={state.msgNotification}
+          setMsgNotification={setMsgNotification}
         />
+          <ActionCableConsumer
+            channel="MessagesChannel"
+            onReceived={handleReceivedMsg}
+          />
       </div>
     )
   }
@@ -335,6 +353,7 @@ function App() {
             setCurrentConvo={setCurrentConvo}
             setMyMessages={setMyMessages}
             getMyMessages={getMyMessages}
+            setMsgNotification={setMsgNotification}
           />
         </Route>
       </Switch>
