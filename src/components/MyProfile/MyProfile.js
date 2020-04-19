@@ -28,7 +28,7 @@ export default function MyProfile(props) {
           </div>
 
         <div className="profile-content-wrapper">
-          <Card.Title className="profile-font-name">{props.myProfile.name}, {props.myProfile.birthdate}</Card.Title>
+          <Card.Title className="profile-font-name">{props.myProfile.name}, {new Date(props.myProfile.birthdate).toDateString().slice(4)}</Card.Title>
           <Card.Title className="profile-font">{props.myProfile.location}</Card.Title>
           <Card.Text className="profile-font">{props.myProfile.description}</Card.Text>  
         </div>
@@ -39,4 +39,4 @@ export default function MyProfile(props) {
     </div>
   )
 }
-// new Date(props.start_date).toDateString().slice(4)
+// new Date(props.myProfile.birthdate).toDateString().slice(4)
