@@ -5,8 +5,9 @@ import { ActionCableConsumer } from 'react-actioncable-provider';
 
 export default function Chat(props) {
 
-  const listMatches = props.myMatches.map(element => {
+  const listMatches = props.myMatches.map((element, index) => {
     return <MatchProfile 
+      key={index}
       name={element.name}
       id={element.id}
       currentUser={props.user}

@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default function Messages(props) {
-  const listMessages = props.myMessages.map(element => {
+  const listMessages = props.myMessages.map((element, index) => {
 
     if(element.user_id !== props.user) {
       element.user_id = props.myMatchMsgUser
@@ -17,6 +17,7 @@ export default function Messages(props) {
 
     return (
       <Message 
+        key={index}
         user_id={element.user_id}
         body={element.body}
         currentUser={props.user}
@@ -54,11 +55,16 @@ export default function Messages(props) {
 
   return (
     <div className="messages"> 
-      <Link to="chat" onClick={() => {props.setCurrentConvo(); props.setMyMessages()}}>
-        <FontAwesomeIcon icon={faChevronLeft} size="3x"/>
-      </Link>
-      <h1>{props.myMatchMsgUser}</h1>
-      {listMessages}
+      <div className='msgsHeader'>
+        <Link to="chat" onClick={() => {props.setCurrentConvo(); props.setMyMessages()}}>
+          <FontAwesomeIcon icon={faChevronLeft} size="3x"/>
+        </Link>
+        <h1>{props.myMatchMsgUser}</h1>
+      </div>
+
+      <div className="msgsContent">
+        {listMessages}
+      </div>
       <ActionCableConsumer
         channel="MessagesChannel"
         onReceived={handleReceived}

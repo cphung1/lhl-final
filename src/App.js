@@ -144,6 +144,10 @@ function App() {
         .then(res => {
           console.log("CREATED MATCH OBJECT!!!!!!",res)
           setState(prev => ({...prev, modalShow: true}))
+          axios.post('/api/conversations', {data})
+          .then(res => {
+            console.log("CONVERSATION CREATED", res)
+          })
         })
       } else {
         console.log("NO MATCH YET")

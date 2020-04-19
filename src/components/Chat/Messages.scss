@@ -17,6 +17,12 @@
     margin-bottom: 1rem;
   }
 
+  .msgsContent {
+    height: 73vh;
+    overflow-y: scroll;
+    bottom: 0;
+  }
+
   form {
     position: fixed;
     bottom: 100px;
