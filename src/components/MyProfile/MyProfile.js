@@ -28,7 +28,7 @@ export default function MyProfile(props) {
           </div>
 
         <div className="profile-content-wrapper">
-          <Card.Title className="profile-font">{props.myProfile.name}, {props.myProfile.birthdate}</Card.Title>
+          <Card.Title className="profile-font-name">{props.myProfile.name}, {props.myProfile.birthdate}</Card.Title>
           <Card.Title className="profile-font">{props.myProfile.location}</Card.Title>
           <Card.Text className="profile-font">{props.myProfile.description}</Card.Text>  
         </div>
