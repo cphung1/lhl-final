@@ -37,13 +37,15 @@ export default function Login(props) {
     <div className='login'> 
       <img src="./images/logo/LogoMakr_62F6RG.png" alt="logo"></img>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label><FontAwesomeIcon icon={faEnvelope}/></label>
-          <input type="text" name="email" placeholder="Email" value={emailState.email} onChange={handleEmail} />
-        </div>
-        <div>
-          <label><FontAwesomeIcon icon={faKey}/></label>
-          <input type="password" name="password" placeholder="Password" value={passwordState.password} onChange={handlePassword} />
+        <div className="login-wrapper">
+          <div>
+            <label><FontAwesomeIcon icon={faEnvelope}/></label>
+            <input type="text" name="email" placeholder="Email" value={emailState.email} onChange={handleEmail} />
+          </div>
+          <div>
+            <label><FontAwesomeIcon icon={faKey}/></label>
+            <input type="password" name="password" placeholder="Password" value={passwordState.password} onChange={handlePassword} />
+          </div>
         </div>
         <div className="loginButton">
           <button>Login</button>

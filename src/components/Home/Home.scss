@@ -6,7 +6,7 @@ img {
 }
 
 #event-wrapper {
-  margin-top: 370px;
+  margin-top: 90px;
   text-align: -webkit-center;
   display: list-item;
 }
@@ -16,16 +16,20 @@ img {
 .event-wrapper {
   text-align: center;
   height: 20%;
-  width: 60%;
-  padding: 4.5em;
+  width: 55%;
+  padding: 3.5em;
   border-radius: 15px;
   border: solid 2px #ffbfdb;
-  background-color: whitesmoke;
-  margin-top: 5em;
+  background-color: #f7f7f766;
+  margin-top: 3.5em;
 
   a {
     color: #fc89bb;
     font-weight: bold;
     font-size: 33px;
   }
+}
+
+.home-body {
+  margin-top: 50px;
 }

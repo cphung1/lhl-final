@@ -11,8 +11,6 @@ export default function Swipe(props) {
     setState(prev => ({isVisible: !prev.isVisible}))
   }
   
-
-
   const calculateAge = (birthdate) => {
     const currentYear = new Date().getFullYear()
     return currentYear - birthdate
@@ -22,15 +20,18 @@ export default function Swipe(props) {
   return (
     <div className="oneprofile" style={{zIndex: rand}}> 
       <Card className={`card ${state.isVisible}`}>
-        <Card.Body>
+        <Card.Body className="swipe-wrapper">
           <div className="imgdiv">
 
         <Card.Img className="cardImg" variant="top" src={`./images/users/${props.id}.jpg`} alt={props.name} />
+          <h2>          ___________________________________________________________</h2>
           </div>
 
-        <Card.Title className="pofileName">{props.name}, {calculateAge(props.birthdate.slice(0, 4))}</Card.Title>
-        <Card.Title>{props.location}</Card.Title>
-        <Card.Text>{props.description}</Card.Text>
+        <div className="swipe-content-wrapper">
+            <Card.Title className="pofileName">{props.name}, {calculateAge(props.birthdate.slice(0, 4))}</Card.Title>
+            <Card.Title className="swipe-font">{props.location}</Card.Title>
+            <Card.Text className="swipe-font">{props.description}</Card.Text>
+        </div>
         </Card.Body>
       </Card>
       <div className={`button ${state.isVisible}`} >

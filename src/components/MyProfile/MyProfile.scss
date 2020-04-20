@@ -23,26 +23,25 @@
     position: absolute;
 
     .card {
-      // width: 85vw;
       height: 65vh;
-      // border-radius: 0.7rem;
-      // box-shadow: 0px 0px 0px 6px rgba(245, 245, 245, 0.63);
-      // border: none;
     }
 
     .card-body {
-      padding: 0;
+      padding: 20px;
       align-self: center;
       width: fit-content;
       border: solid 5px #fc89bb;
       border-radius: 10px;
-      background-color: whitesmoke;
+      background-color: #f7f7f766;
+    }
+    .profile-content-wrapper {
+      margin: 1em;
+  
     }
   
     img {
       height: 40vh;
       width: auto;
-      // border-radius: 5px;
       max-width: fit-content;
     }
   
@@ -50,17 +49,20 @@
       margin-bottom: 1.5rem;
     }
   
-    .pofileName {
+    .profile-font {
       font-size: 2rem;
+    }
+
+    .profile-font-name {
+      font-size: 2.5em;
+      color: #fc89bb;
     }
   
     .cardImg {
-      // border-radius: 10px;
+      border-radius: 10px;
       display: flex;
       margin-left: auto;
       margin-right: auto;
-      // width: 30em;
     }
   }
-
 }
