@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import {Link} from "react-router-dom"
 import "./Messages.scss"
 import MatchProfile from '../MatchProfile/MatchProfile'
@@ -53,6 +53,11 @@ export default function Messages(props) {
       setMsg({msg: ''})
     })
   }
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    divRef.current.scrollIntoView({ behavior: 'auto', block: 'end' });
+  });
 
   return (
     <div className="messages"> 
@@ -63,8 +68,9 @@ export default function Messages(props) {
         <h1>{props.myMatchMsgUser}</h1>
       </div>
 
-      <div className="msgsContent">
+      <div className="msgsContent" >
         {listMessages}
+      <div ref={divRef} />
       </div>
       {/* <ActionCableConsumer
         channel="MessagesChannel"

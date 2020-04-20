@@ -28,6 +28,7 @@ import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons'
 library.add( faHeart, faTimes)
 
 function App() {
+  const today = new Date();
   const [state, setState] = useState({
     events: [],
     event: null,
@@ -310,7 +311,8 @@ function App() {
         </Route>
 
         <Route path='/home'>
-            <Home />
+            <Home 
+            />
         </Route>
 
         <Route path='/chat'>

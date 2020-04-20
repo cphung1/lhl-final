@@ -8,7 +8,7 @@ export default function Home(props) {
     <div> 
       <img src="/images/logo/LogoMakr_62F6RG.png"></img>
       <div className="home-body">
-        <Date />
+        <Date/>
         <div id="event-wrapper">
           <div className="event-wrapper">
             <Link to="/upcoming_events">Upcoming Events</Link>
