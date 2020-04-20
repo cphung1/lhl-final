@@ -26,10 +26,13 @@ export default function Messages(props) {
     )
   })
 
-  const handleReceived = (message) => {
-    props.getMyMessages(message.conversation_id)
-    props.setMsgNotification(true)
-  }
+  // const handleReceived = (message) => {
+  //   props.getMyMessages(message.conversation_id)
+  //   if(message.user_id !== props.selectedMatchMsgUserID) {
+  //     props.setMsgNotification(true)
+  //   }
+    
+  // }
 
   const [msgState, setMsg] = useState({
     msg: '',
@@ -59,10 +62,16 @@ export default function Messages(props) {
     divRef.current.scrollIntoView({ behavior: 'auto', block: 'end' });
   });
 
+
   return (
     <div className="messages"> 
       <div className='msgsHeader'>
-        <Link to="chat" onClick={() => {props.setCurrentConvo(); props.setMyMessages()}}>
+        <Link to="chat" onClick={() => {
+          props.setCurrentConvo(); 
+          props.setMyMessages(); 
+          props.setSelectedMatchMsgUserID(null); 
+          props.setMsgNotification(null)
+          }}>
           <FontAwesomeIcon icon={faChevronLeft} size="3x"/>
         </Link>
         <h1>{props.myMatchMsgUser}</h1>

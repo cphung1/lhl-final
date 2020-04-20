@@ -14,16 +14,16 @@ export default function NavBar(props) {
   return(
     <div className="NavBar">
         <div className="icons">
-          <Link to="chat" onClick={() => {props.setCurrentConvo(); props.setMyMessages(); props.setMsgNotification(false)}}>
+          <Link to="chat" onClick={() => {props.setCurrentConvo(); props.setMyMessages(); props.setMsgNotification(false); props.setSelectedMatchMsgUserID(null)}}>
             <FontAwesomeIcon icon={faCommentAlt} />
             <span className={badgeClass}>.</span>
           </Link>
           
-          <Link to="/home">
+          <Link to="/home" onClick={() => {props.setSelectedMatchMsgUserID(null)}}>
             <FontAwesomeIcon icon={faHome} />
           </Link>
 
-          <Link to="/myprofile">
+          <Link to="/myprofile" onClick={() => {props.setSelectedMatchMsgUserID(null)}}>
             <FontAwesomeIcon icon={faUserCircle} />   
           </Link>
         </div>

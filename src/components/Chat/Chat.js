@@ -15,10 +15,11 @@ export default function Chat(props) {
       setMyMatchMsgUser={props.setMyMatchMsgUser}
       messagedUserID={props.messagedUserID}
       setMessagedUserID={props.setMessagedUserID}
+      setSelectedMatchMsgUserID={props.setSelectedMatchMsgUserID}
     />
   })
 
-  const handleReceived = (message) => {
+  const handleReceivedConvo = (message) => {
     console.log("CHANNEL MSG", message)
     props.getMyMatches(props.user)
   }
@@ -34,7 +35,7 @@ export default function Chat(props) {
 
       <ActionCableConsumer
         channel="ConversationsChannel"
-        onReceived={handleReceived}
+        onReceived={handleReceivedConvo}
       />
     </div>
   )

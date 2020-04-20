@@ -41,6 +41,7 @@ function App() {
     currentConvo: null,
     myMessages: [],
     myMatchMsgUser: null,
+    selectedMatchMsgUserID: null,
     messagedUserID: null,
     currentUserEmail: 'abaynes@gmail.com',
     modalShow: false,
@@ -51,7 +52,9 @@ function App() {
 
   const setMsgNotification = (status) => setState(prev => ({...prev, msgNotification: status}))
 
-  const setMyMatchMsgUser = match_id => {setState(prev => ({...prev, myMatchMsgUser: match_id}))}
+  const setMyMatchMsgUser = match_name => {setState(prev => ({...prev, myMatchMsgUser: match_name}))}
+
+  const setSelectedMatchMsgUserID = match_id => setState(prev => ({...prev, selectedMatchMsgUserID: match_id}))
 
   const setUser = user => {setState(prev => ({...prev, user: user}))}
   
@@ -246,10 +249,13 @@ function App() {
   const handleReceivedMsg = (message) => {
     getMyMessages(message.conversation_id)
     console.log(message)
-    if(message.user_id !== state.user) {
+    if(message.user_id !== state.user && message.user_id !== state.selectedMatchMsgUserID) {
       setMsgNotification(true)
       setMessagedUserID(message.user_id)
     }
+    // if(message.user_id !== state.selectedMatchMsgUserID) {
+    //   setMsgNotification(true)
+    // }
   }
 
   const validates = (user) => {
@@ -269,6 +275,7 @@ function App() {
           setMyMessages={setMyMessages}
           msgNotification={state.msgNotification}
           setMsgNotification={setMsgNotification}
+          setSelectedMatchMsgUserID={setSelectedMatchMsgUserID}
         />
           <ActionCableConsumer
             channel="MessagesChannel"
@@ -323,6 +330,7 @@ function App() {
               getMyConversations={getMyConversations}
               myConversations={state.myConversations}
               setMyMatchMsgUser={setMyMatchMsgUser}
+              setSelectedMatchMsgUserID={setSelectedMatchMsgUserID}
               // user={state.user}
               // getMyMatches={getMyMatches}
               messagedUserID={state.messagedUserID}
@@ -358,8 +366,10 @@ function App() {
             myProfile={state.myProfile}
             user={state.user}
             myMatchMsgUser={state.myMatchMsgUser}
+            selectedMatchMsgUserID={state.selectedMatchMsgUserID}
             setCurrentConvo={setCurrentConvo}
             setMyMessages={setMyMessages}
+            setSelectedMatchMsgUserID={setSelectedMatchMsgUserID}
             getMyMessages={getMyMessages}
             setMsgNotification={setMsgNotification}
           />

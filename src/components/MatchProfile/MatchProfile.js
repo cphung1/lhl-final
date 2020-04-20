@@ -23,6 +23,7 @@ export default function MatchProfile(props) {
         <button onClick={() => {
           props.getMyConversations(props.currentUser, props.id); 
           props.setMyMatchMsgUser(props.name); 
+          props.setSelectedMatchMsgUserID(props.id)
           props.setMessagedUserID(null);
           }}>
           Message
