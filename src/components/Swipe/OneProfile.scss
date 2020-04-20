@@ -12,6 +12,12 @@
     border: none;
   }
 
+  .swipe-wrapper {
+    border: solid 5px #fc89bb;
+    border-radius: 12px;
+    margin: inherit;
+  }
+
   img {
     height: 40vh;
     width: auto;
@@ -24,7 +30,16 @@
   }
 
   .pofileName {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: #fc89bb;
+  }
+
+  .swipe-content-wrapper {
+    // padding-left: 20px;
+  }
+  
+  .swipe-font {
+    font-size: 2em;
   }
 
   .cardImg {

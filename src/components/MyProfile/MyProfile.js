@@ -25,6 +25,7 @@ export default function MyProfile(props) {
         <Card.Body>
           <div className="imgdiv">
         <Card.Img className="cardImg" variant="top" src={`./images/users/${props.myProfile.id}.jpg`} alt={props.myProfile.name} />
+        <h2>          ___________________________________________________________</h2>
           </div>
 
         <div className="profile-content-wrapper">

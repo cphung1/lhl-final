@@ -27,7 +27,7 @@
     }
 
     .card-body {
-      padding: 0;
+      padding: 20px;
       align-self: center;
       width: fit-content;
       border: solid 5px #fc89bb;
@@ -35,7 +35,7 @@
       background-color: #f7f7f766;
     }
     .profile-content-wrapper {
-      margin: 3em;
+      margin: 1em;
   
     }
   
@@ -59,6 +59,7 @@
     }
   
     .cardImg {
+      border-radius: 10px;
       display: flex;
       margin-left: auto;
       margin-right: auto;
