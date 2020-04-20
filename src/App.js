@@ -321,8 +321,8 @@ function App() {
               getMyConversations={getMyConversations}
               myConversations={state.myConversations}
               setMyMatchMsgUser={setMyMatchMsgUser}
-              user={state.user}
-              getMyMatches={getMyMatches}
+              // user={state.user}
+              // getMyMatches={getMyMatches}
               messagedUserID={state.messagedUserID}
               setMessagedUserID={setMessagedUserID}
             />
