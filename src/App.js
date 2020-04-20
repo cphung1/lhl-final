@@ -40,10 +40,13 @@ function App() {
     currentConvo: null,
     myMessages: [],
     myMatchMsgUser: null,
+    messagedUserID: null,
     currentUserEmail: 'abaynes@gmail.com',
     modalShow: false,
     msgNotification: false,
   });
+
+  const setMessagedUserID = (user_id) => setState(prev => ({...prev, messagedUserID: user_id}))
 
   const setMsgNotification = (status) => setState(prev => ({...prev, msgNotification: status}))
 
@@ -244,6 +247,7 @@ function App() {
     console.log(message)
     if(message.user_id !== state.user) {
       setMsgNotification(true)
+      setMessagedUserID(message.user_id)
     }
   }
 
@@ -319,6 +323,8 @@ function App() {
               setMyMatchMsgUser={setMyMatchMsgUser}
               user={state.user}
               getMyMatches={getMyMatches}
+              messagedUserID={state.messagedUserID}
+              setMessagedUserID={setMessagedUserID}
             />
         </Route>
 

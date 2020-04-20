@@ -13,6 +13,8 @@ export default function Chat(props) {
       currentUser={props.user}
       getMyConversations={props.getMyConversations}
       setMyMatchMsgUser={props.setMyMatchMsgUser}
+      messagedUserID={props.messagedUserID}
+      setMessagedUserID={props.setMessagedUserID}
     />
   })
 

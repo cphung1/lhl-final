@@ -12,7 +12,9 @@
 
   .matchdetails {
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;   
+    position: relative;
+
     .matchimg {
       height: 170px;
       width: 170px;
@@ -41,5 +43,22 @@
       font-size: 2rem;
       padding: 1rem;
     }
+  }
+
+  .badge {
+    visibility: hidden;
+  }
+
+  .badge--on {
+    visibility: visible;
+    color: red;
+    border: 8px solid red;
+    border-radius: 50%;
+    background: red;
+    height: 40px;
+    width: 35px;
+    position: absolute;
+    left: 4px;
+    top: 5px;
   }
 }
