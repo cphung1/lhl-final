@@ -1,8 +1,6 @@
 import React from 'react'
 import "./MatchProfile.scss"
-import axios from 'axios'
 import { Link } from 'react-router-dom'
-import Messages from '../Chat/Messages'
 import classnames from "classnames";
 
 export default function MatchProfile(props) {

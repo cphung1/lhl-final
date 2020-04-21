@@ -1,7 +1,6 @@
 import React from 'react'
 import "./eventDetails.scss"
 import { Link } from 'react-router-dom'
-import Image from 'react-bootstrap/Image'
 import Card from 'react-bootstrap/Card'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import ListGroup from 'react-bootstrap/ListGroup'

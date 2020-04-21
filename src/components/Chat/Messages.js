@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import {Link} from "react-router-dom"
 import "./Messages.scss"
-import MatchProfile from '../MatchProfile/MatchProfile'
-import { ActionCableConsumer } from 'react-actioncable-provider';
 import Message from './Message'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -25,14 +23,6 @@ export default function Messages(props) {
       />
     )
   })
-
-  // const handleReceived = (message) => {
-  //   props.getMyMessages(message.conversation_id)
-  //   if(message.user_id !== props.selectedMatchMsgUserID) {
-  //     props.setMsgNotification(true)
-  //   }
-    
-  // }
 
   const [msgState, setMsg] = useState({
     msg: '',

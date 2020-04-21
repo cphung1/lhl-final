@@ -28,7 +28,6 @@ import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons'
 library.add( faHeart, faTimes)
 
 function App() {
-  const today = new Date();
   const [state, setState] = useState({
     events: [],
     event: null,

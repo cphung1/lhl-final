@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card'
 import "./OneProfile.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import ModalMatch from '../Modal/Modal'
 
 export default function Swipe(props) {
   const [state, setState] = useState({isVisible: true})

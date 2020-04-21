@@ -52,13 +52,13 @@
   .badge--on {
     visibility: visible;
     color: red;
-    border: 8px solid red;
+    border: 6px solid white;
     border-radius: 50%;
     background: red;
-    height: 40px;
-    width: 35px;
+    height: 45px;
+    width: 45px;
     position: absolute;
-    left: 4px;
-    top: 5px;
+    left: -10px;
+    top: 10px;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState, setState } from 'react';
+import React from 'react';
 import Calendar from 'react-calendar';
 import "./Date.scss"
 

@@ -1,17 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import "./events.scss"
 import Event from '../Events/Event';
 import EventDetails from './EventDetails';
-import classNames from "classnames";
-
 
 export default function Events(props) {
-
-  // const showDetails = (element) => {
-  //   setState(prev => ({...prev, current_event: element.id}))
-  //   return state.current_event
-  // }
-
   const listEvent = props.events.map(element => {
     return <Event 
       key = {element.id}
@@ -49,8 +41,8 @@ export default function Events(props) {
 
   return (
     <div className="list-event-wrapper">
-          <h1>List of Events</h1>
-          {props.event ?  listEventDetails : listEvent}  
+      <h1>List of Events</h1>
+      {props.event ?  listEventDetails : listEvent}  
     </div>
   )
 }
