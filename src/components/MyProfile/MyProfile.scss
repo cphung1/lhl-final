@@ -4,9 +4,9 @@
   justify-content: center;
   display: flex;
 
-  button {
+  .logoutBtn {
     position: absolute;
-    top: 78vh;
+    top: 84vh;
     color: white;
     border: 1px solid lightgrey;
     width: 70%;
@@ -17,6 +17,70 @@
     padding: 0.5rem;
   }
 
+  .editBtn {
+    visibility: visible;
+    position: absolute;
+    top: 75vh;
+    color: white;
+    border: 1px solid lightgrey;
+    width: 70%;
+    border-radius: 0.5rem;
+    font-size: 2.3rem;
+    font-weight: bold;
+    background: #44EAC4;
+    padding: 0.5rem;
+  }
+
+  .editBtn-disabled{
+    visibility: hidden;
+  }
+
+  .saveBtn-disabled{
+    visibility: hidden;
+    position: absolute;
+    top: 75vh;
+    color: white;
+    border: 1px solid lightgrey;
+    width: 70%;
+    border-radius: 0.5rem;
+    font-size: 2.3rem;
+    font-weight: bold;
+    background: #31c7f5;
+    padding: 0.5rem;
+  }
+
+  .saveBtn {
+    visibility: visible;
+    position: absolute;
+    top: 75vh;
+    color: white;
+    border: 1px solid lightgrey;
+    width: 70%;
+    border-radius: 0.5rem;
+    font-size: 2.3rem;
+    font-weight: bold;
+    background: #31c7f5;
+    padding: 0.5rem;
+  }
+
+  .form {
+    color: #4a4a4a;
+    outline: 1px solid grey;
+    box-shadow: 0 0 0 3px lightgrey;
+    width: 100%;
+    background: rgba(242, 242, 242, 1);
+  }
+
+  .form-disabled {
+    color: black;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    white-space: initial;
+    overflow-wrap: break-word;
+    background: none;
+    border: none;
+  }
 
   .myProfileContent {
     top: 5rem;
