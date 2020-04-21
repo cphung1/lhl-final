@@ -55,7 +55,7 @@ export default function Swipe(props) {
     right,
     left,
   }) => (
-      <div>
+      <div className="button-wrapper">
         <button onClick={() => {props.dislikeUser(props.currentUser, cards[0].id); toggleBox(); handleOnSwipe(direction.LEFT)}}>
           <FontAwesomeIcon icon={'times'} size='4x'className='times'/>
         </button>
