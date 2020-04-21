@@ -10,6 +10,7 @@ import MyProfile from "./components/MyProfile/MyProfile"
 import Chat from "./components/Chat/Chat"
 import NavBar from "./components/Nav/NavBar"
 import Messages from './components/Chat/Messages'
+import Loading from './components/Loading/Loading'
 import { ActionCableConsumer } from 'react-actioncable-provider';
 
 
@@ -45,7 +46,10 @@ function App() {
     currentUserEmail: 'abaynes@gmail.com',
     modalShow: false,
     msgNotification: false,
+    doneLoading: false
   });
+
+  const setDoneLoading = (status) => setState(prev => ({...prev, doneLoading: status}))
 
   const setMessagedUserID = (user_id) => setState(prev => ({...prev, messagedUserID: user_id}))
 
@@ -207,12 +211,14 @@ function App() {
     }))
     ]).then(all => {
       setState(prev => ({...prev, mySwipes: all[0].data}))
-      .then(() => {
-        listSwipes(state.mySwipes)
-      })
-      // console.log("swipes", state.mySwipes)
+      listSwipes(all[0].data)
+      console.log("swipes", state.mySwipes)
+      console.log('init card', INITIAL_CARDS_STATE)
       // console.log("data", all[0].data)
-    }).catch((err) => {
+    }).then(() => {
+      setDoneLoading(true)
+    })
+    .catch((err) => {
       console.log("CANT SEND PARAMS BY GETFILTERUSERS")
     })
   }
@@ -376,6 +382,7 @@ function App() {
             modalShow={state.modalShow}
             setModalShow={setModalShow}
             INITIAL_CARDS_STATE={INITIAL_CARDS_STATE}
+            user={state.user}
           />
         </Route>
 
@@ -392,6 +399,12 @@ function App() {
             setSelectedMatchMsgUserID={setSelectedMatchMsgUserID}
             getMyMessages={getMyMessages}
             setMsgNotification={setMsgNotification}
+          />
+        </Route>
+
+        <Route path='/loading'>
+          <Loading
+            doneLoading={state.doneLoading}
           />
         </Route>
       </Switch>

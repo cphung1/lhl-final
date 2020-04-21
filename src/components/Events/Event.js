@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./event.scss"
 import { Link } from 'react-router-dom'
 import Image from 'react-bootstrap/Image'
 
 export default function Event(props) {
+
   return (
     <div className="ListEvents"> 
       <div className="event-container">
@@ -16,7 +17,7 @@ export default function Event(props) {
                 <button className="btn-pink" onClick={() => props.setEvent(props.id)}>
                   Details
                 </button>
-                <Link to="swipe">
+                <Link to="loading">
                   <button className="btn-pink-swipe" onClick={() => {props.getFilterUsers(props.user, props.id); props.fetchSingleEvent(props.id)}}>Start Swiping</button>
                 </Link>
           </div>

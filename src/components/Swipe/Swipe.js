@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
 export default function Swipe(props) {
-  const INITIAL_CARDS_STATE = props.INITIAL_CARDS_STATE;
+  // const INITIAL_CARDS_STATE = props.INITIAL_CARDS_STATE;
 
   const [state, setState] = useState({isVisible: true})
 
@@ -17,23 +17,27 @@ export default function Swipe(props) {
     setState(prev => ({isVisible: !prev.isVisible}))
   }
 
-  const listSwipes = () => {
-    props.mySwipes.map(element => {
-      return(
-        INITIAL_CARDS_STATE.push({
-          id: element.id,
-          name: element.name,
-          birthdate: element.birthdate,
-          location: element.location,
-          description: element.description
-        }
-        )
-      )
-    })
-  }
+  // const listSwipes = () => {
+  //   props.mySwipes.map(element => {
+  //     return(
+  //       INITIAL_CARDS_STATE.push({
+  //         id: element.id,
+  //         name: element.name,
+  //         birthdate: element.birthdate,
+  //         location: element.location,
+  //         description: element.description
+  //       }
+  //       )
+  //     )
+  //   })
+  // }
+
 
   const [lastSwipeDirection, setLastSwipeDirection] = React.useState(null);
-  const [cards, setCards] = React.useState(INITIAL_CARDS_STATE);
+
+  const [cards, setCards] = useState(props.INITIAL_CARDS_STATE);
+
+  const [history, setHistory] = useState([]);
 
   const handleOnSwipe = (swipeDirection) => {
     if (swipeDirection === direction.RIGHT) {
@@ -48,8 +52,13 @@ export default function Swipe(props) {
       toggleBox();
     }
 
+
+    setHistory(prev => [...prev, cards[0]])
     setCards((prev) => prev.slice(1));
+
   };
+
+
 
   const renderButtons = ({
     right,
@@ -83,9 +92,8 @@ export default function Swipe(props) {
   // })
 
   useEffect(() => {
-    listSwipes()
-    console.log(INITIAL_CARDS_STATE)
-  })
+
+  }, [cards])
   
   return (
     <div className="swipe"> 
@@ -96,12 +104,24 @@ export default function Swipe(props) {
         {
           cards.length > 0
             ? (
+              <div>
               <Swipeable
                 renderButtons={renderButtons}
                 onSwipe={handleOnSwipe}
               >
                 <Card item={cards[0]} />
               </Swipeable>
+                {props.modalShow ? (
+                  <ModalMatch
+                  show={props.modalShow}
+                  name={history[history.length - 1].name}
+                  id={history[history.length - 1].id}
+                  onHide={() => {props.setModalShow()}}
+                  user={props.user}
+                />
+
+                ) : <div/>}
+              </div>
             )
             : (
               <Typography variant="body1">
@@ -110,10 +130,6 @@ export default function Swipe(props) {
             )
         }
       </Grid>
-      <ModalMatch
-        show={props.modalShow}
-        onHide={() => props.setModalShow()}
-      />
     </div>
   )
 }

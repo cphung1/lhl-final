@@ -7,3 +7,35 @@
     opacity: 0.1 !important;
   }
 }
+
+.matchImg {
+  display: flex;
+  img {
+    height: 330px;
+    width: 330px;
+    border-radius: 50%;
+    border: 3px solid lightgrey;
+  }
+}
+
+.modal-content {
+  height: 50vh;
+}
+
+.modal-header {
+  border-bottom: 0;
+}
+
+#contained-modal-title-vcenter {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  color: #fc89bb;
+}
+
+.matchDesc{
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 2rem;
+  
+}
