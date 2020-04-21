@@ -11,7 +11,7 @@ export default function Event(props) {
         <div className="content-wrapper">
         <Image className="avatar" src={`./images/events/${props.id}.jpg`} roundedCircle/>
           <div className="text-wrapper">
-            <h2>{props.name}</h2>
+            <h2 className="event-title">{props.name}</h2>
             <h3>{new Date(props.start_date).toDateString().slice(4)} - {new Date(props.end_date).toDateString().slice(4)}</h3>
             <h4>{props.location}</h4>
                 <button className="btn-pink" onClick={() => props.setEvent(props.id)}>

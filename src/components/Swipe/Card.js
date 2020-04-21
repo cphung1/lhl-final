@@ -6,16 +6,33 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import { blue } from '@material-ui/core/colors';
+import { noAuto } from '@fortawesome/fontawesome-svg-core';
+import styles from "./Card.scss"
+import { border } from '@material-ui/system';
+
+const calculateAge = (birthdate) => {
+  const currentYear = new Date().getFullYear()
+  return currentYear - birthdate
+}
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    marginTop: 100,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxWidth: 700,
+    backgroundColor: blue,
+    border: 'solid 2px #f77eb3',
+    borderRadius: 5
   },
   cardMedia: {
     objectFit: 'cover',
     objectPosition: 'top',
     userSelect: 'none',
     pointerEvents: 'none',
+    width: 700,
+    borderRadius: 5
   },
 });
 
@@ -36,17 +53,16 @@ export default function Card({
         <CardMedia
           className={classes.cardMedia}
           component="img"
-          height="250"
+          height="500"
           image={`./images/users/${id}.jpg`}
-        />
+          />
         <CardContent>
           <Typography gutterBottom variant="h6" component="h3">
-            {name}
-            {birthdate}
-            {location}
+            <h2>{name}, {calculateAge(birthdate.slice(0, 4))}</h2>
+            <h3>{location}</h3>
           </Typography>
           <Typography gutterBottom variant="body1" component="h3">
-            {description}
+            <h3>{description}</h3>
           </Typography>
         </CardContent>
       </CardActionArea>
