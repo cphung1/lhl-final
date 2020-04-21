@@ -16,3 +16,35 @@
   }
 
 }
+
+.times {
+  color: #FF4C69;
+}
+
+.heart {
+  color: #44EAC4;
+}
+
+// button {
+//   background: none;
+//   border-radius: 50%;
+//   border: none;
+//   box-shadow: 0px 0px 0px 4px rgba(245, 245, 245, 0.53);
+//   width: auto;
+//   // height: 90px;
+//   // width: 90px;
+// }
+
+.card-wrapper {
+  background-color: blue;
+}
+
+button .MuiButtonBase-root .MuiCardActionArea-root {
+  border: solid 2px #fc89bb;
+  background-color: blue;
+}
+
+button .MuiCardActionArea-root {
+  border: solid 2px #fc89bb;
+  background-color: blue;
+}

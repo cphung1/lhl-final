@@ -55,11 +55,11 @@ export default function Swipe(props) {
     right,
     left,
   }) => (
-      <div>
+      <div className="times">
         <button onClick={() => {props.dislikeUser(props.currentUser, cards[0].id); toggleBox(); handleOnSwipe(direction.LEFT)}}>
           <FontAwesomeIcon icon={'times'} size='4x'className='times'/>
         </button>
-        <button onClick={() => {props.likeUser(props.currentUser, cards[0].id); toggleBox(); handleOnSwipe(direction.Right)}}>
+        <button className="heart" onClick={() => {props.likeUser(props.currentUser, cards[0].id); toggleBox(); handleOnSwipe(direction.Right)}}>
           <FontAwesomeIcon icon={'heart'} size='4x' className='heart' />
         </button>
       </div> 
@@ -97,10 +97,11 @@ export default function Swipe(props) {
           cards.length > 0
             ? (
               <Swipeable
+                className="card-wrapper"
                 renderButtons={renderButtons}
                 onSwipe={handleOnSwipe}
               >
-                <Card item={cards[0]} />
+                <Card className={"card-wrapper"} item={cards[0]} />
               </Swipeable>
             )
             : (
