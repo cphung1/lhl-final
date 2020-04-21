@@ -64,7 +64,10 @@ export default function Messages(props) {
           }}>
           <FontAwesomeIcon icon={faChevronLeft} size="3x"/>
         </Link>
-        <h1>{props.myMatchMsgUser}</h1>
+        <div className="msg-match-info">
+          <h1>{props.myMatchMsgUser}</h1>
+          <img className="matchimg" src={`./images/users/${props.selectedMatchMsgUserID}.jpg`} alt={props.myMatchMsgUser} />
+        </div>
       </div>
 
       <div className="msgsContent" >

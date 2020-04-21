@@ -37,11 +37,14 @@
   border-color: #fc89bb;
   background-color: #fc89bb;
   border-radius: 15px;
-  margin-right: 0.7em;
 }
 .btn-wrapper {
   display: flex;
   justify-content: space-evenly;
+
+  button {
+    width: 200px;
+  }
 }
 
 .detail-title {

@@ -10,7 +10,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 export default function EventDetails(props) {
   return (
     <div>
-    <h2 className="detail-title">Details</h2>
+    {/* <h2 className="detail-title">Details</h2> */}
     <div className="details">
       <div className="card-wrapper"> 
       <Card id="card">

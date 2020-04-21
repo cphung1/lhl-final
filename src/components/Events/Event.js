@@ -18,7 +18,7 @@ export default function Event(props) {
                   Details
                 </button>
                 <Link to="loading">
-                  <button className="btn-pink-swipe" onClick={() => {props.getFilterUsers(props.user, props.id); props.fetchSingleEvent(props.id)}}>Start Swiping</button>
+                  <button className="btn-pink-swipe" onClick={() => {props.getFilterUsers(props.user, props.id); props.fetchSingleEvent(props.id)}}>Find friends</button>
                 </Link>
           </div>
         </div>
