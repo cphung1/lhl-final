@@ -30,13 +30,17 @@ export default function Chat(props) {
 
   return (
     <div className="chat"> 
-      <h1>Messages</h1>
-      {listMatches}
+      <div className="chat-header">
+        <h1>Messages</h1>
+      </div>
 
-      <ActionCableConsumer
-        channel="ConversationsChannel"
-        onReceived={handleReceivedConvo}
-      />
+      <div className="chat-listing-matches">
+        {listMatches}
+      </div>
+        <ActionCableConsumer
+          channel="ConversationsChannel"
+          onReceived={handleReceivedConvo}
+        />
     </div>
   )
 }
