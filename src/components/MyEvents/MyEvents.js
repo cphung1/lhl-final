@@ -31,8 +31,12 @@ export default function MyEvents(props) {
 
   return (
     <div className="my-event-wrapper"> 
-      <h1>My Events</h1>
-      {listEvent}
+      <div className="my-event-header">
+        <h1>My Events</h1>
+      </div>
+      <div className="my-event-single-event-list">
+        {listEvent}
+      </div>
     </div>
   )
 }

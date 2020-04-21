@@ -68,7 +68,7 @@ export default function Swipe(props) {
         <button onClick={() => {props.dislikeUser(props.currentUser, cards[0].id); toggleBox(); handleOnSwipe(direction.LEFT)}}>
           <FontAwesomeIcon icon={'times'} size='4x'className='times'/>
         </button>
-        <button onClick={() => {props.likeUser(props.currentUser, cards[0].id); toggleBox(); handleOnSwipe(direction.Right)}}>
+        <button className="heart-button-wrapper" onClick={() => {props.likeUser(props.currentUser, cards[0].id); toggleBox(); handleOnSwipe(direction.Right)}}>
           <FontAwesomeIcon icon={'heart'} size='4x' className='heart' />
         </button>
       </div> 
@@ -100,6 +100,7 @@ export default function Swipe(props) {
     <div className="swipeHeader">
       <h1 className="swipeEvent">{props.eventName}</h1>
     </div>
+    <div className="swipe-list-single-profile">
     <Grid item xs={12}>
         {
           cards.length > 0
@@ -130,6 +131,8 @@ export default function Swipe(props) {
             )
         }
       </Grid>
+    </div>
+
     </div>
   )
 }

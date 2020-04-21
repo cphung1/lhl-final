@@ -21,18 +21,20 @@ const useStyles = makeStyles({
     marginTop: 100,
     marginLeft: 'auto',
     marginRight: 'auto',
-    maxWidth: 700,
+    // maxWidth: 700,
     backgroundColor: blue,
-    border: 'solid 2px #f77eb3',
-    borderRadius: 5
+    // border: 'solid 2px #f77eb3',
+    maxWidth: 900,
+    borderRadius: 20,
+    // borderRadius: 5
   },
   cardMedia: {
     objectFit: 'cover',
     objectPosition: 'top',
     userSelect: 'none',
     pointerEvents: 'none',
-    width: 700,
-    borderRadius: 5
+    borderRadius: 5,
+    width: 900,
   },
 });
 
@@ -56,7 +58,7 @@ export default function Card({
           height="500"
           image={`./images/users/${id}.jpg`}
           />
-        <CardContent>
+        <CardContent className="card-content">
           <Typography gutterBottom variant="h6" component="h3">
             <h2>{name}, {calculateAge(birthdate.slice(0, 4))}</h2>
             <h3>{location}</h3>

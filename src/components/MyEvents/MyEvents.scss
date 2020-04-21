@@ -1,6 +1,3 @@
-h1 {
-  color: #f77eb3;
-}
 
 .list-event-wrapper {
   padding: 30px;
@@ -10,9 +7,23 @@ h1 {
   button.btn-pink-swipe {
     display: none;
   }
-
-  h1 {
-    color: #f77eb3;
-  }
 }
 
+.my-event-wrapper {
+  .my-event-header{
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    background-color: #ffbfdb;
+  
+    h1 {
+      color: white;
+    }
+  }
+
+  .my-event-single-event-list{
+    margin-top: 6rem;
+  }
+}
