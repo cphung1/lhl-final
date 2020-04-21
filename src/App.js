@@ -160,7 +160,7 @@ function App() {
           })
         })
       } else {
-        console.log("NO MATCH YET")
+        console.log("PRESSED LIKE + NO MATCH YET", res)
       }
     }).catch(error => 
       console.log("Cannot like")
@@ -175,10 +175,27 @@ function App() {
 
     return axios.post(`/api/dislike`, {data})
     .then((res) => {
-      console.log(res)
+      console.log("DISLIKED", res)
     }).catch(error => 
       console.log("Cannot dislike")
     )
+  }
+
+  const INITIAL_CARDS_STATE = [];
+
+  const listSwipes = (mySwipes) => {
+    mySwipes.map(element => {
+      return(
+        INITIAL_CARDS_STATE.push({
+          id: element.id,
+          name: element.name,
+          birthdate: element.birthdate,
+          location: element.location,
+          description: element.description
+        }
+        )
+      )
+    })
   }
 
   const getFilterUsers = (user_id, event_id) => {
@@ -190,8 +207,11 @@ function App() {
     }))
     ]).then(all => {
       setState(prev => ({...prev, mySwipes: all[0].data}))
-      console.log("swipes", state.mySwipes)
-      console.log("data", all[0].data)
+      .then(() => {
+        listSwipes(state.mySwipes)
+      })
+      // console.log("swipes", state.mySwipes)
+      // console.log("data", all[0].data)
     }).catch((err) => {
       console.log("CANT SEND PARAMS BY GETFILTERUSERS")
     })
@@ -355,6 +375,7 @@ function App() {
             eventName={state.currentEventName}
             modalShow={state.modalShow}
             setModalShow={setModalShow}
+            INITIAL_CARDS_STATE={INITIAL_CARDS_STATE}
           />
         </Route>
 

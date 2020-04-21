@@ -17,7 +17,7 @@ export default function Swipe(props) {
   const rand = Math.floor(Math.random() * 50)
   
   return (
-    <div className="oneprofile" style={{zIndex: rand}}> 
+    <div className="oneprofile"> 
       <Card className={`card ${state.isVisible}`}>
         <Card.Body className="swipe-wrapper">
           <div className="imgdiv">
@@ -31,9 +31,8 @@ export default function Swipe(props) {
             <Card.Title className="swipe-font">{props.location}</Card.Title>
             <Card.Text className="swipe-font">{props.description}</Card.Text>
         </div>
-        </Card.Body>
-      </Card>
-      <div className={`button ${state.isVisible}`} >
+
+        <div className={`button ${state.isVisible}`} >
         <button onClick={() => {props.dislikeUser(props.currentUser, props.id); toggleBox()}}>
           <FontAwesomeIcon icon={'times'} size='4x'className='times'/>
         </button>
@@ -41,6 +40,9 @@ export default function Swipe(props) {
           <FontAwesomeIcon icon={'heart'} size='4x' className='heart' />
         </button>
       </div> 
+        </Card.Body>
+
+      </Card>
     </div>
   )
 }

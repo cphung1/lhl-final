@@ -1,95 +1,105 @@
-@import "~bootstrap/scss/bootstrap";
+// @import "~bootstrap/scss/bootstrap";
 
-.oneprofile {
-  top: 5rem;
-  position: absolute;
+// .oneprofile {
+//   top: 5rem;
+//   position: absolute;
 
-  .card {
-    width: 85vw;
-    height: 65vh;
-    border-radius: 0.7rem;
-    box-shadow: 0px 0px 0px 6px rgba(245, 245, 245, 0.63);
-    border: none;
-  }
+//   .card {
+//     width: 85vw;
+//     height: 65vh;
+//     border-radius: 0.7rem;
+//     box-shadow: 0px 0px 0px 6px rgba(245, 245, 245, 0.63);
+//     border: none;
+//   }
 
-  .swipe-wrapper {
-    border: solid 5px #fc89bb;
-    border-radius: 12px;
-    margin: inherit;
-  }
+//   .swipe-wrapper {
+//     border: solid 5px #fc89bb;
+//     border-radius: 12px;
+//     margin: inherit;
+//   }
 
+//   img {
+//     height: 40vh;
+//     width: auto;
+//     border-radius: 0.25rem;
+//     max-width: fit-content;
+//   }
+
+//   .imgdiv {
+//     margin-bottom: 1.5rem;
+//   }
+
+//   .pofileName {
+//     font-size: 2.5rem;
+//     color: #fc89bb;
+//   }
+
+//   .swipe-content-wrapper {
+//     // padding-left: 20px;
+//   }
+  
+//   .swipe-font {
+//     font-size: 2em;
+//   }
+
+//   .cardImg {
+//     display: flex;
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+
+//   .button {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-evenly;
+//     margin-top: 2rem;
+
+//     button {
+//       background: none;
+//       border-radius: 50%;
+//       border: none;
+//       box-shadow: 0px 0px 0px 4px rgba(245, 245, 245, 0.53);
+//       height: 90px;
+//       width: 90px;
+//     }
+
+//     .heart {
+//       color: #44EAC4;
+//     }
+
+//     .times{
+//       color: #FF4C69;
+//     }
+//   }
+
+//   .false{
+//     display: none;
+//   }
+
+//   // .animate {
+//   //   animation-duration: 4s;
+//   //   animation-name: slideL2R;
+//   //   display: none;
+//   // }
+
+//   // @keyframes slideL2R {
+//   //   from {
+//   //     margin-left: 0%;
+//   //   }
+  
+//   //   to {
+//   //     margin-right: -500%;
+
+//   //   }
+//   // }
+// }
+
+.oneprofile{
   img {
-    height: 40vh;
     width: auto;
+    height: 600px;
     border-radius: 0.25rem;
     max-width: fit-content;
   }
 
-  .imgdiv {
-    margin-bottom: 1.5rem;
-  }
-
-  .pofileName {
-    font-size: 2.5rem;
-    color: #fc89bb;
-  }
-
-  .swipe-content-wrapper {
-    // padding-left: 20px;
-  }
-  
-  .swipe-font {
-    font-size: 2em;
-  }
-
-  .cardImg {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .button {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 2rem;
-
-    button {
-      background: none;
-      border-radius: 50%;
-      border: none;
-      box-shadow: 0px 0px 0px 4px rgba(245, 245, 245, 0.53);
-      height: 90px;
-      width: 90px;
-    }
-
-    .heart {
-      color: #44EAC4;
-    }
-
-    .times{
-      color: #FF4C69;
-    }
-  }
-
-  .false{
-    display: none;
-  }
-
-  // .animate {
-  //   animation-duration: 4s;
-  //   animation-name: slideL2R;
-  //   display: none;
-  // }
-
-  // @keyframes slideL2R {
-  //   from {
-  //     margin-left: 0%;
-  //   }
-  
-  //   to {
-  //     margin-right: -500%;
-
-  //   }
-  // }
 }
