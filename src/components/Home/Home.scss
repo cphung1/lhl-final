@@ -20,13 +20,18 @@ img {
   padding: 3.5em;
   border-radius: 15px;
   border: solid 2px #ffbfdb;
-  background-color: #f7f7f766;
+  background-color: #ffbfdb;
   margin-top: 3.5em;
 
   a {
-    color: #fc89bb;
+    color: white;
     font-weight: bold;
-    font-size: 33px;
+    font-size: 2rem;
+  }
+
+  a:hover {
+    color: #6b6b6b;
+    text-decoration: none;
   }
 }
 
