@@ -4,9 +4,22 @@
   justify-content: center;
   display: flex;
 
+  .myprofile-header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    background-color: #ffbfdb;
+  
+    h1 {
+      color: white;
+    }
+  }
+
   .logoutBtn {
     position: absolute;
-    top: 84vh;
+    top: 86vh;
     color: white;
     border: 1px solid lightgrey;
     width: 70%;
@@ -20,7 +33,7 @@
   .editBtn {
     visibility: visible;
     position: absolute;
-    top: 75vh;
+    top: 78vh;
     color: white;
     border: 1px solid lightgrey;
     width: 70%;
@@ -38,7 +51,7 @@
   .saveBtn-disabled{
     visibility: hidden;
     position: absolute;
-    top: 75vh;
+    top: 78vh;
     color: white;
     border: 1px solid lightgrey;
     width: 70%;
@@ -52,7 +65,7 @@
   .saveBtn {
     visibility: visible;
     position: absolute;
-    top: 75vh;
+    top: 78vh;
     color: white;
     border: 1px solid lightgrey;
     width: 70%;
@@ -83,11 +96,14 @@
   }
 
   .myProfileContent {
-    top: 5rem;
+    top: 9rem;
     position: absolute;
 
     .card {
+      width: fit-content !important;
       height: 65vh;
+      outline: none;
+      border: none;
     }
 
     .card-body {
@@ -129,4 +145,5 @@
       margin-right: auto;
     }
   }
+
 }

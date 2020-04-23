@@ -45,7 +45,9 @@ export default function MyProfile(props) {
   
   return (
     <div className='myprofile'> 
-      <h1>My Profile</h1>
+      <div className='myprofile-header'>
+        <h1>My Profile</h1>
+      </div>
       <div className="myProfileContent">
       <Card style={{ width: '35rem' }}>
         <Card.Body>

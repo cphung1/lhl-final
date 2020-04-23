@@ -44,6 +44,11 @@
       font-size: 2rem;
       padding: 1rem;
     }
+    button:hover {
+      color: #fc89bb;
+      background-color: white;
+      border: 1px solid #fc89bb;
+    }
   }
 
   .badge {
@@ -62,4 +67,5 @@
     left: -10px;
     top: 10px;
   }
+
 }

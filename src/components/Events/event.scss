@@ -10,6 +10,11 @@
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2), 3px 3px 15px rgba(0, 0, 0, 0.15);
 }
 
+.event-container:hover {
+  box-shadow: 1px 1px 15px #fddeeb, 4px 4px 20px #fddeeba6;
+  border: 0.8px solid #efefef;
+}
+
 .visible-box {
   font-weight: bold;
   color: white;
@@ -40,6 +45,11 @@
   margin-right: 0.7em;
 }
 
+.btn-pink:hover {
+  color: #fc89bb;
+  background: white;
+}
+
 .btn-pink-swipe {
   font-size: 32px;
   color: white;
@@ -47,4 +57,9 @@
   background-color: #fc89bb;
   border-radius: 6px;
   margin-right: 0.7em;
+}
+
+.btn-pink-swipe:hover {
+  color: #fc89bb;
+  background-color: white;
 }
