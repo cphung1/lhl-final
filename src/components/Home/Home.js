@@ -11,10 +11,10 @@ export default function Home(props) {
         <Date/>
         <div id="event-wrapper">
           {/* <div className="event-wrapper"> */}
-            <Link to="/upcoming_events">Upcoming Events</Link>
+            <Link className="upcoming-btn" to="/upcoming_events">Upcoming Events</Link>
           {/* </div> */}
           {/* <div className="event-wrapper"> */}
-            <Link to="/my_events">My Events</Link>
+            <Link className="my-event-btn" to="/my_events">My Events</Link>
           {/* </div> */}
         </div>
       </div>

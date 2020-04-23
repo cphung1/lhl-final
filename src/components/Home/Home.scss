@@ -22,13 +22,26 @@ img {
     padding: 3rem;
     font-size: 2.5rem;
     margin-bottom: 4rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  a:hover {
+  .my-event-btn:hover {
     color: #fc89bb;
     background-color: white;
     text-decoration: none;
     border: 1px solid #fc89bb;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .upcoming-btn:hover {
+    color: #fc89bb;
+    background-color: white;
+    text-decoration: none;
+    border: 1px solid #fc89bb;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
