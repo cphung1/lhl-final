@@ -10,7 +10,7 @@ Click to watch a demo!
 
 ## Screen Shots
 **Login Page**
-!["Screenshot of Login page"](https://github.com/cphung1/kandi/blob/master/public/readme-media/main.png)
+!["Screenshot of Login page"](https://github.com/cphung1/kandi/blob/master/public/readme-media/main.png | width=100)
 
 **Home Page**
 !["Screenshot of Home page"](https://github.com/cphung1/kandi/blob/master/public/readme-media/main.png)
