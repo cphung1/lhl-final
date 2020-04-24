@@ -5,7 +5,7 @@ It makes api requests to our custom kandi-api server. The chat feature is built 
 
 ## Final Product 
 **Kandi**
-[!["Watch the vdideo"](https://imgur.com/a/P1yUDMx)](https://www.youtube.com/watch?v=xPCxgsX18-o&feature=youtu.be)
+[!["Watch the video"](https://imgur.com/a/P1yUDMx)](https://www.youtube.com/watch?v=xPCxgsX18-o&feature=youtu.be)
 
 ## Dependencies 
 
