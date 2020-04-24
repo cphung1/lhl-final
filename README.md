@@ -10,13 +10,13 @@ Click to watch a demo!
 
 ## Screen Shots
 **Login Page**
-!["Screenshot of Login page"](https://github.com/cphung1/kandi/blob/master/public/readme-media/main.png | width=48)
+!["Screenshot of Login page"](https://github.com/cphung1/kandi/blob/master/public/readme-media/main.png)
 
 **Home Page**
-!["Screenshot of Home page"](https://github.com/cphung1/kandi/blob/master/public/readme-media/main.png | width=38)
+!["Screenshot of Home page"](https://github.com/cphung1/kandi/blob/master/public/readme-media/main.png)
 
 **Upcoming Events**
-!["Screenshot of upcoming events page"](https://github.com/cphung1/kandi/blob/master/public/readme-media/upcoming-events.png | width=58)
+!["Screenshot of upcoming events page"](https://github.com/cphung1/kandi/blob/master/public/readme-media/upcoming-events.png )
 
 **Event Details**
 !["Screenshot of event details"](https://github.com/cphung1/kandi/blob/master/public/readme-media/event-details.png)
