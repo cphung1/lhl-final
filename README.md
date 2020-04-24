@@ -4,25 +4,17 @@ Kandi is a tinder-inspiried application. Users are given a list of music festiva
 It makes api requests to our custom kandi-api server. The chat feature is built fromt scratch and incorporates ActionCable as a websocket to allow users to messages each other in real time. 
 
 ## Final Product 
-**Title**
-!["Screenshot of "]()
-
-**Title**
-!["Screenshot of "]()
-
-**Title**
-!["Screenshot of "]()
-
-**Title**
-!["Screenshot of "]()
-
-
-
+**Kandi**
+[!["Watch the vdideo"](https://imgur.com/a/P1yUDMx)](https://www.youtube.com/watch?v=xPCxgsX18-o&feature=youtu.be)
 
 ## Dependencies 
 
 - classnames
-- 
+- axios
+- material-ui
+- bootstrap
+- font awesome
+- kandi-api
 
 ## Getting Started
 
