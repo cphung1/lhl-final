@@ -1,7 +1,7 @@
 # Kandi
 Kandi is a tinder-inspiried application. Users are given a list of music festivals they can click 'going' to, which generates a list of my events that they are attending. For each music festival, they are given a list of users who are also attending that music festival. They can choose to like or dislike the user. If two users like each other a match is created which enables them to message each other. 
 
-It makes api requests to our custom kandi-api server. The chat feature is built fromt scratch and incorporates ActionCable as a websocket to allow users to messages each other in real time. 
+It makes api requests to our custom kandi-api server. The chat feature is built from scratch and incorporates ActionCable as a websocket to allow users to messages each other in real time. 
 
 ## Final Product 
 **Kandi Demo Video**
